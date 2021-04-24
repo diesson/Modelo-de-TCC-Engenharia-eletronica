@@ -81,27 +81,6 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    
-    %Dessa forma, a \autoref{fig:tensao_dc_cbi} apresenta a tensão de saída do CBI de dois ramos. 
-    
-    %\begin{figure}[H]
-    %	\centering
-    %	\caption{Medida em osciloscópio da tensão de saída do CBI de dois ramos}
-    %	\includegraphics[scale=.4]{pdf/resultados/NEW29.PNG}
-    %    \label{fig:tensao_dc_cbi}
-    % 	\indentedfont[12.5cm]{Elaboração própria (2021)}
-    %\end{figure}
-    
-    %Após essas alterações, com exceção da variação da tensão de saída que permaneceu em \SI{2}{\%}, como mostrado na \autoref{fig:tensao_ac_cbi}, todos os demais requisitos elétricos estabelecidos para o projeto puderam ser alcançados e validados. Devido à especificação da variação da tensão de saída ser muita pequena, optou-se por mantê-la em \SI{2}{\%}, ao invés de aumentar a capacitância de saída.
-    
-    %\begin{figure}[H]
-    %	\centering
-    %	\caption{Medida em osciloscópio da variação da tensão de saída do CBI de dois ramos}
-    %	\includegraphics[scale=.4]{pdf/resultados/NEW30.PNG}
-    %    \label{fig:tensao_ac_cbi}
-    % 	\indentedfont[12.5cm]{Elaboração própria (2021)}
-    %\end{figure}
-    
     Após essas alterações, com exceção da variação da tensão de saída que permaneceu em \SI{2}{\%}, todos os demais requisitos elétricos estabelecidos para o projeto puderam ser alcançados e validados. Devido à especificação da variação da tensão de saída ser muita pequena, optou-se por mantê-la em \SI{2}{\%}, ao invés de aumentar a capacitância de saída.
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,7 +103,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     O segundo teste realizado foi do produto em regime térmico. Esse teste teve como objetivo verificar se haveria uma alteração na medida de EMI conduzida e irradiada do produto em temperatura ambiente e em regime térmico. Porém, após realizado, verificou-se que não havia variações nas medidas, podendo dessa forma realizar os testes futuros sem que houvesse a necessidade de deixar o produto em regime térmico antes de realizar as medidas. 
     
-    Por último, após alguns testes, verificou-se a influência da rotação da placa dentro da câmara para um mesmo eixo medido nos testes de EMI irradiada. Nesse teste, percebeu-se que há uma grande variação na medida se os componentes presentes na placa estão voltados para a parede da câmara contendo o absorvedor de ondas electromagnéticas ou a porta da câmara. A \autoref{fig:med_rad_rot_placa} apresenta as medidas obtidas nesse teste para um dos eixos. 
+    Por último, após alguns testes, verificou-se a influência da rotação da placa dentro da câmara para um mesmo eixo medido nos testes de EMI irradiada. Nesse teste, percebeu-se que há uma grande variação na medida se os componentes presentes na placa estão voltados para a parede da câmara contendo o absorvedor de ondas electromagnéticas ou a porta da câmara. A \autoref{fig:med_rad_rot_placa} apresenta as medidas obtidas nesse teste para um dos eixos.
     
     \begin{figure}[H]
     	\centering
@@ -142,7 +121,6 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     Tendo estabelecido um padrão de medida, pôde-se dar inicio aos testes de emissão conduzida e irradiada. Todos os testes realizados utilizaram como padrão comparativo a medida inicial (do CBI de dois ramos), para que seja possível analisar apenas os impactos gerados pela nova técnica. A \autoref{fig:med_cond_circ_inic} apresenta a medida inicial de EMI conduzida do CBI de dois ramos. 
     
-    %Espectro de emissão irradiada para o ensaio d
     \begin{figure}[H]
     	\centering
     	\caption{Ensaio de emissão conduzida do conversor Buck \Interleaved}
@@ -289,8 +267,6 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     	\label{fig:med_rad_cap1n_cap100n_dissip}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
-
-    % FALAR MAIS ALGUMA COISA??
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \subsection{Técnicas relacionadas ao elemento transistor} \label{cap:result_tecnicas_chaveam}
@@ -459,30 +435,6 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     Assim, a \autoref{fig:med_cond_3ssc20k_EG} apresenta a comparação dos resultados obtidos da emissão conduzida para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \SI{20}{\kilo\hertz}.
     
-    %Com o objetivo de verificar seus impactos, a nova estrutura foi testada inicialmente em uma frequência de \SI{50}{\kilo\hertz}. A \autoref{fig:med_cond_3ssc50k} traz a comparação dos resultados obtidos da emissão conduzida para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \SI{50}{\kilo\hertz}.
-    
-    %\begin{figure}[H]
-    %	\centering
-    %	\caption{Comparação dos resultados do ensaio de emissão conduzida para um CBI e um conversor 3SSC com uma frequência de chaveamento de \SI{50}{\kilo\hertz}}
-    %	\includegraphics[scale=.9]{pdf/cond/Conversor 3SSC (freq. de 50kHz).pdf}
-    %	\label{fig:med_cond_3ssc50k}
-    % 	\indentedfont[15.5cm]{Elaboração própria (2021)}
-    %\end{figure}
-    
-    %Percebe-se na figura que houve algumas alterações nos valores em alguns pontos medidos, porém os harmônicos de maior relevância se mantiveram os mesmos. O comparativo dos resultados da emissão irradiada para o mesmo teste pode ser observado na \autoref{fig:med_rad_3ssc50k}.
-    
-    %\begin{figure}[H]
-    %	\centering
-    %	\caption{Comparação dos resultados do ensaio de emissão irradiada para um CBI e um conversor 3SSC com uma frequência de chaveamento de \SI{50}{\kilo\hertz}}
-    %	\includegraphics[scale=.9]{pdf/rad/Conversor 3SSC (freq. de 50kHz).pdf}
-    %	\label{fig:med_rad_3ssc50k}
-    % 	\indentedfont[15.5cm]{Elaboração própria (2021)}
-    %\end{figure}
-    
-    %Como observado, apesar da redução dos valores na emissão conduzida, essa estrutura proporcionou um grande aumento nos valores obtidos na emissão irradiada. Percebe-se um aumento significativo nas frequências abaixo de \SI{170}{\mega\hertz}, com um novo pico no entorno de \SI{72}{\mega\hertz}.
-    
-    %Verificada as características da nova estrutura para a frequência de operação de \SI{50}{\kilo\hertz}, pode-se iniciar os testes para a frequência de projeto da nova estrutura, \SI{20}{\kilo\hertz}. Em todos os testes realizados com essa estrutura, os requisitos elétricos foram validados. Assim, a \autoref{fig:med_cond_3ssc20k_EG} apresenta a comparação dos resultados obtidos da emissão conduzida para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \SI{20}{\kilo\hertz}.
-    
     \begin{figure}[H]
     	\centering
     	\caption{Comparação dos resultados do ensaio de emissão conduzida para um CBI e um conversor 3SSC com uma frequência de chaveamento de \SI{20}{\kilo\hertz}}
@@ -546,11 +498,6 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     \end{figure}
     
     Na figura, nota-se uma redução nos níveis emitidos entre as frequências de \SI{80}{\mega\hertz} e \SI{200}{\mega\hertz} devido a mudança no entreferro do indutor. Assim, apesar da redução nos níveis de emissão conduzida para essa estrutura, há um aumento na emissão irradiada. Ainda, percebe-se a necessidade de um grande cuidado ao projetar os indutores, uma vez que seu entreferro é um dos grandes responsáveis pela emissão irradiada. 
-    
-    % DIc = 2.0377 -> L = 35,78uH
-    % 29,17uH
-    % 198uF
-    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \subsection{Uso combinado das técnicas com melhores resultados} \label{cap:result_tecnicas_total}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -578,6 +525,4 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     \end{figure}
     
     Um resultado semelhante a emissão conduzida pode ser observado nessa figura, que apesar do aumento na emissão irradiada provocada pelo conversor 3SSC, as demais técnicas utilizadas foram capazes de contrabalancear essa emissão. Percebe-se que há uma grande redução nos níveis medidos em toda a faixa avaliada na norma, com apenas alguns poucos pontos acima dos limites estabelecidos por ela. 
-    
-    % TABELA RESUMO DE QUAIS FREQUÊNCIAS REDUZIRAM E AUMENTARAM COM QUAIS TÉCNICAS
     

@@ -172,16 +172,6 @@
             
             Para que o conversor esteja operando em CCM, é necessário que a energia acumulada no indutor de 0 a D$\cdot$T seja igual a energia fornecida de D$\cdot$T a T. Assim, pode-se obter o valor da indutância L do filtro passa-baixa através da equação da tensão sobre o indutor, do período de 0 a D$\cdot$T, apresentado na \autoref{eq:buck_indutor} \cite{ref:ELP_livro_Hart}.
             
-            %Para que o conversor esteja operando em CCM, é necessário que a energia acumulada no indutor de 0 a D$\cdot$T seja igual a energia fornecida de D$\cdot$T a T. Assim, pode-se obter o valor da indutância L do filtro passa-baixa através da equação da tensão sobre o indutor, do período de 0 a D$\cdot$T, como apresentado na \autoref{eq:buck_indutor_x} e \autoref{eq:buck_indutor} \cite{ref:ELP_livro_Hart}.
-            
-            %\begin{equation} \label{eq:buck_indutor_x}
-            %    \subx{V}{L} = 
-            %    \text{L} \cdot \frac{\subx{di}{L}}{\text{dt}} 
-            %    \rightarrow 
-            %    (\subx{V}{s} - \subx{V}{o}) = 
-            %    \text{L} \cdot \frac{\Delta\subx{I}{L}}{\text{D}\cdot \text{T}} 
-            %\end{equation}
-            
             \begin{equation} \label{eq:buck_indutor}
                 \text{L} = 
                 \frac{(\subx{V}{s} - \subx{V}{o})\cdot\text{D}}
@@ -198,19 +188,6 @@
             \end{conditions}
             
             \citeonline{ref:ELP_livro_Hart} afirma que enquanto a corrente no capacitor for positiva, o capacitor estará carregando. Portanto, pela definição de capacitância, pode-se obter o seu valor através da equação de carga do capacitor. A \autoref{eq:buck_capacitor} apresenta a equação para o cálculo dessa capacitância.
-            
-            %\citeonline{ref:ELP_livro_Hart} afirma que enquanto a corrente no capacitor for positiva, o capacitor estará carregando. Portanto, pela definição de capacitância, pode-se obter o seu valor através da equação de carga do capacitor. O valor da carga Q pode ser obtido através do cálculo da área da parte positiva dessa corrente. A \autoref{eq:buck_capacitor} e \autoref{eq:buck_capacitor_x} apresentam a equação para o cálculo dessa capacitância.
-            
-            %\begin{equation} \label{eq:buck_capacitor_x}
-            %    \begin{split}
-            %    \text{Q} = \text{C} \cdot \subx{V}{o}
-            %    &\rightarrow 
-            %    \text{C} = \frac{\Delta\text{Q}}{\Delta\subx{V}{o}} \\
-            %    &\rightarrow 
-            %    \text{C} = \frac{1}{2} \cdot (\frac{ \Delta\subx{I}{L}}{2} \cdot \frac{T}{2})
-            %                \cdot\frac{1}{\Delta\subx{V}{o}} 
-            %    \end{split}
-            %\end{equation}
             
             \begin{equation} \label{eq:buck_capacitor}
                 \text{C} =
@@ -500,8 +477,6 @@
              	\indentedfont[16cm]{Adaptado de \citeonline{ref:BI_artigo_Balestero}}
             \end{figure}
             
-            %Como já mencionado, neste modo de operação, as chaves $\subx{S}{1}$ e $\subx{S}{2}$ não acionam simultaneamente. Assim, na \autoref{fig:c_buck_3ssc_estagio}a, inicialmente se tem a chave $\subx{S}{1}$ e o diodo $\subx{D}{2}$ conduzindo e a fonte $\subx{V}{S}$ fornecendo a energia para a carga. Em um segundo momento, \autoref{fig:c_buck_3ssc_estagio}b, ambas as chaves estão em aberto e apenas os diodos conduzem e o indutor é responsável por fornecer a energia. Em seguida, a chave $\subx{S}{2}$ e o diodo $\subx{D}{1}$ passam a conduzir e a fonte $\subx{V}{S}$ volta a fornecer a energia para a carga, como na \autoref{fig:c_buck_3ssc_estagio}c. Por ultimo, na \autoref{fig:c_buck_3ssc_estagio}d, semelhante ao estágio da \autoref{fig:c_buck_3ssc_estagio}b, apenas os diodos estão conduzindo e o indutor fornece a energia para a carga. 
-            
             Como já mencionado, neste modo de operação, as chaves $\subx{S}{1}$ e $\subx{S}{2}$ não acionam simultaneamente. Assim, tem-se que: 
             
             \begin{alineas}
@@ -588,12 +563,6 @@
     Ainda, \citeonline{ref:EMC_livro_Paul} salienta que um determinado sistema que gera uma frequência ou faixa de frequências, tende a ser suscetível a esta frequência ou faixa de frequências.
     
     Para \citeonline{ref:EMC_phd_schlichting}, a propagação da energia eletromagnética entre sistemas pode ser classificada em: emissão conduzida, suscetibilidade a condução, emissão irradiada e suscetibilidade a irradiação.
-    
-    % FALAR: Gerador
-    % FALAR: Emissor
-    % FALAR: Receptor
-    % FALAR: Interferência conduzida
-    % FALAR: Interferência irradiada
     
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \subsection{Gerador} \label{cap:fund_emc_gen}
@@ -691,26 +660,6 @@
         Para \citeonline{ref:EMC_phd_schlichting}, na EMI conduzida a propagação e recepção se dá pela conexão do circuito com a rede e a carga, através dos cabos de alimentação e do plano de terra, seja nos modos comum ou diferencial. Para a emissão e recepção de EMI irradiadas, têm-se fios, trilhas e caminhos fechados (\textit{loop}) atuando como antenas.
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % \subsection{Meios de propagação} \label{cap:fund_emc_propag}
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        
-        % Letsch
-        % Para que um ruído, a partir do componente onde foi gerado, possa chegar até qualquer receptor, ele precisa percorrer um caminho que pode ser complexo, por ser formado por diversos elementos e meios de propagação (PAUL, 2006).
-        
-        % Letsch
-        % O acoplamento é o mecanismo que permite que o ruído mude de meio de propagação, possibilitando que o caminho entre o gerador e o receptor se forme (PAUL, 2006).
-        
-        % Letsch
-        % A propagação de ruídos que causam EMI ocorre por acoplamentos capacitivos ou por indutivos formados pelas características intrínsecas do circuito eletrônico, como os elementos parasitas da placa de circuito impresso ou dos componentes do circuito (SCHLICHTING, 2003).
-        
-        % Letsch
-        % As antenas irradiam e captam energia eletromagnética e, portanto, também são responsáveis por acoplar ondas eletromagnéticas do sistema para o ar e do ar para o sistema (PAUL, 2006, p. 421). Portanto, o caminho pelo qual o ruído se propaga pode ser não intencional, ou seja, é um caminho de propagação que não é previsto no projeto, sendo normalmente formado pelos elementos parasitas ou por não idealidades do sistema (PAUL, 2006). Para Schlichting (2003, p. 12), [...]
-        
-        % Letsch
-        % Portanto, a eficiência da propagação de uma emissão EMI em um meio é dependente da combinação da impedância do meio e a composição harmônica do ruído.
-        
-        
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \subsection{Interferência conduzida} \label{cap:fund_emc_intcond}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
@@ -738,14 +687,6 @@
         A radiação é a forma pelo qual o ruído eletromagnético produzido é levado para dentro ou fora de um sistema via meios não metálicos, como o ar. O ruído irradiado é gerado, em sua maioria, devido à circulação de correntes por trilhas, cabos, terminais de semicondutores e caminhos fechados (\textit{loop}), que geram campos eletromagnéticos com parâmetros dependentes da amplitude e frequência dessa corrente, dimensões das trilhas e/ou cabos, área do \textit{loop}, entre outros \cite{ref:EMC_msc_muriel}.
         
         Como na interferência conduzida, na irradiada, o trabalho para mitigação desse ruído é uma tarefa trabalhosa e complexa, por exigir o conhecimento do comportamento eletromagnético em alta frequência dos materiais presentes no sistema \cite{ref:EMC_phd_schlichting}.
-        
-        
-%\citeonline{ref:EMC_msc_muriel}
-%\citeonline{ref:EMC_livro_Paul}
-%\citeonline{ref:EMC_livro_PrintedCircuit} % Site montrose
-%\citeonline{ref:EMC_livro_EmcAndPrinted} % Scan montrose
-%\citeonline{ref:EMC_phd_schlichting}
-%\citeonline{ref:EMC_phd_muriel}
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \subsection{Normas de compatibilidade eletromagnética} \label{cap:fund_emc_norma}
@@ -815,10 +756,6 @@
              	\indentedfont[15.5cm]{Adaptado de \citeonline{ref:EMC_CISPR22}}
             \end{figure}
             
-            % Schlichting - p. 21
-            % Por esta razão as normas CISPR foram utilizadas como referência nos estudos experimentais e de simulação apresentados no quarto e quinto capítulos respectivamente. Assim serão analisadas mais detalhadamente as normas CISPR.[3][5][6][7][31]
-            
-            
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             \subsection{Técnicas para mitigação de ruído} \label{cap:fund_emc_conv_mitig}
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -829,36 +766,9 @@
             
             Ainda, \citeonline{ref:EMC_phd_schlichting} afirma que alguns desses problemas de interferência podem ser resolvidos ainda em etapas anteriores do projeto, ganhando tempo e reduzindo os investimentos necessários. 
             
-            % Artigo
-            % Dentre as técnicas comuns para a redução do problemas de EMC de ruído conduzido, pode-se citar o uso de capacitores \textit{bypass} de alta frequência e filtros de modos comum e diferencial, sendo suas principais funções o confinamento do ruído dentro do circuito e a imunidade deste contra ruídos externos \cite{ref:noise_reduction, ref:filter_design}.
-            
-            % Artigo
-            % Já do ponto de vista de técnicas para redução do ruído irradiado, pode-se buscar minimizar os laços de alta frequência (\textit{Hot Loop}) em placas de circuito impresso (PCI), evitar o uso de dissipadores, uso de uma menor frequência e maior tempo de subida possível no chaveamento, blindagens, entre outros. E mesmo com todos esses métodos, vale ressaltar que o ruído geralmente não pode ser eliminado, apenas minimizado ao ponto de não causar mais problemas \cite{ref:noise_reduction, ref:livro_emc_printedCircuit, ref:livro_emc_productDesigners}. 
-            
-            
-            
-            
-            % Testes realizados:
-            % - Remover os dissipadores [Dawson]
-            % - Aumentar a tensão do gate []
-            % - Diminuir a tensão do gate []
-            % - Aumentar o tempo de subida do gate
-            % - Rotacionar um dos indutores
-            % - Conectar o dissipador ao GND utilizando um capacitor (1nF)
-            % - Conectar o dissipador ao GND utilizando um capacitor (100nF)
-            % - Choke bead no transistor
-            % - Acoplado com frequência de chaveamento 20kHz (Entreferro grande)
-            % - Acoplado com frequência de chaveamento 20kHz (Entreferro pequeno)
-            % - Acoplado com frequência de chaveamento 50kHz (Entreferro pequeno)
-            % - Acoplado com frequência de chaveamento 20kHz + Choke bead + Capacitor de 100nF
-            
-            
-            
-            
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             \subsubsection{Layout de placa de circuito impresso} \label{cap:fund_emc_conv_mitig_cond}
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            % Boas práticas de projeto de layout [Daimer, Schlichting, kueck, ott]
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             
             Segundo as equações de Maxwell, uma corrente que seja alternada no tempo produz um campo eletromagnético. Isso ocorre em todo condutor elétrico, que por não serem ideais, apresentam uma capacitância e indutância. Desta forma, o condutor atua como um transmissor de energia eletromagnética e, ao mesmo tempo, um receptor. As antenas são projetadas de forma a maximizar a energia transmitida ou recebida. Porém, nem toda aplicação deve se comportar como uma antena \cite{ref:EMC_artigo_Texas}.
             
@@ -881,18 +791,9 @@
             
             \citeonline{ref:EMC_artigo_Texas} ainda adverte que um bom \textit{layout} de PCB deve dispor os capacitores o mais próximo possível dos pinos de entrada e referência (tornando a área do \textit{loop} a menor possível). Portanto, a colocação dos capacitores de entrada deve ser uma das primeiras considerações, ao projetar qualquer conversor.
             
-            % hot loop
-            
-            % Kueck - p. 2
-            %  Se fosse possível reduzir a área do loop verde para zero e utilizar um capacitor de entrada ideal com impedância zero, o problema de EMI seria resolvido. Mas no mundo real, devemos encontrar o compromisso ideal.
-            
-            % Daimer - p. 3
-            % Uma olhada na pinagem (veja a Figura 4) ajuda a ver a possibilidade de criar um bom layout reduzindo a área de loops dI / dt altos. O nó de comutação, por exemplo, é uma fonte de ambos: alta variação de corrente (dI) e transição de alta tensão (dV). Uma boa pinagem cuida da separação dos pinos sensíveis ao ruído e dos pinos ruidosos. O nó da chave e o pino de inicialização devem ser posicionados o mais longe possível do pino de feedback sensível ao ruído. Além disso, os pinos de entrada e os pinos de aterramento devem ser vizinhos. Isso facilita o roteamento no PCB e a colocação das tampas de entrada.
-
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             \subsubsection{Dissipadores} \label{cap:fund_emc_conv_mitig_dissip}
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            % Efeito do dissipador na radiação e o aterramento dele [Dawson, Montrose, Schlichting]
             
             No estudo sobre o caminho pelo qual um ruído se propaga, é importante considerar a conexão do semicondutor com o seu dissipador, como mostrado na \autoref{fig:dissipador_semi}. Para \citeonline{ref:EMC_livro_PrintedCircuit}, os dissipadores de calor, por serem de metal e conterem estruturas de aletas, dependendo do harmônico produzido pelo semicondutor que estão conectados, suas dimensões o tornam eletricamente capazes de começar a irradiar energia eletromagnética. 
             
@@ -907,13 +808,6 @@
             Dessa forma, \citeonline{ref:EMC_livro_PrintedCircuit} apresenta como uma possível técnica para redução da EMI a conexão dos dissipadores de calor na referência do circuito. Segundo o autor, usar um dissipador de calor conectado a referência cria um escudo de Faraday, evitando que a energia de alta frequência do semicondutor irradie para o espaço livre ou corrompa componentes adjacentes. 
             
             Ainda, um dissipador de calor conectado a referência, quando isolado, funciona como um grande capacitor de desacoplamento de modo comum entre o semicondutor e a referência. Este capacitor de modo comum é capaz de acoplar ou desviar a energia de alta frequência do dispositivo \cite{ref:EMC_livro_PrintedCircuit}.
-            
-            
-            % Schlichting - p. 50
-            % As capacitâncias parasitas e de acoplamento podem surgir em vários componentes e é através delas que existe uma conexão indesejada e não prevista entre dois pontos de um circuito. 
-            
-            % Schlichting - p. 60
-            % No estudo do caminho (impedância) pelo qual um ruído (frequência) irá se propagar é importante considerar capacitância entre o componente (transistor/diodo) e o seu dissipador, como mostra a figura 3.28. A conexão do dissipador diretamente ao chassi, a referência (terra) ou simplesmente não conectá-lo a nada, pode injetar ruído para a terra via correntes de modo comum. Assim, é conveniente conectá-lo a um ponto do circuito, como uma das trilhas de potência (0, Vcc). [...] O dissipador também pode ser conectado a uma trilha qualquer, via um capacitor sintonizado com a indutância de trilhas, terminais e outros elementos do circuito, para reduzir o ruído em frequências mais problemáticas.
             
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             \subsubsection{Capacitores} \label{cap:fund_emc_conv_mitig_cap}
@@ -952,8 +846,6 @@
             	\label{fig:entreferro}
              	\indentedfont[7cm]{Elaboração própria (2021)}
             \end{figure}
-            
-            % Os materiais ferromagnéticos têm um efeito considerável nos campos magnéticos. Os campos magnéticos tendem a se concentrar em materiais de alta permeabilidade. Por exemplo, no indutor de núcleo ferromagnético mostrado na Fig. 5.27a, indicamos que o fluxo magnético c estava confinado ao núcleo ferromagnético. Isso está correto em uma aproximação razoável. Parte do fluxo vaza e completa o caminho magnético através do ar circundante. A divisão entre quanto do fluxo total permanece no núcleo e quanto vaza depende da relutância do núcleo [1,5]. A quantidade de relutância R depende da permeabilidade m do caminho magnético, de sua área de seção transversal A e de seu comprimento l como [1].
             
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             \subsubsection{Núcleo de ferrite} \label{cap:fund_emc_conv_mitig_choke}
@@ -996,82 +888,6 @@
             Segundo \citeonline{ref:EMC_artigo_Texas}, uma solução simples consiste em aumentar o valor do resistor em série com o terminal de Gate do transistor. O aumento desse valor de resistência aumentará o tempo de subida do sinal comutado, diminuindo a derivada de tensão e corrente do mesmo, o que pode diminuir a EMI às custas da eficiência energética.
             
             Para \citeonline{ref:EMC_phd_schlichting}, outra alternativa para redução da emissão conduzida, relacionada ao chaveamento dos semicondutores, trata-se da redução da frequência de chaveamento. Utilizando esta técnica, busca-se alocar a frequência fundamental do chaveamento o mais longe possível da faixa medida pelas normas de EMC \cite{ref:EMC_artigo_schlichting}. Essa alternativa, apesar de simples, torna-se muitas vezes inviável em projetos de fontes chaveadas, por acarretar em filtros de maior volume, como visto na \autoref{cap:fund_elp}.
-            
-            %\marcador{nota}{Talvez uma seção aqui para fazer uma breve conclusão do capitulo}
-            
-            % Outra alternativa para redução da emissão conduzida, relacionada ao chaveamento dos semicondutores, trata-se da redução da frequência de chaveamento. Como apresentado na \autoref{fig:sinal_comut_ideal_real}, os harmônicos de maior amplitude de um sinal comutado serão os valores próximos da frequência fundamental do sinal, sofrendo atenuação após a frequência de $\frac{1}{\pi\tau}$ \cite{ref:EMC_livro_Paul}. 
-            
-            % Utilizando esta técnica, busca-se deixar a frequência fundamental do chaveamento o mais longe possível da faixa medida pelas normas de EMC. Essa alternativa, apesar de simples, torna-se muitas vezes inviável em projetos de fontes chaveadas, por acarretar em filtros de maior volume, como visto na \autoref{cap:fund_elp}.
-            
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            %\subsubsection{Uso de conversores com 3SSC para redução de EMI} \label{cap:fund_emc_conv_mitig_3ssc}
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-            
-            % FALAR DE BAIXAR A FREQUENCIA fig 20
-            
-            
-            % Possível diminuir a frequência sem comprometer o dimensionamento dos elementos magnéticos do circuito. 
-            
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            % Seixas et al 
-            % Analysis, design, and experimentation of a buck converter based on the three-state switching cell operating in overlapping mode
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            
-            % À medida que a potência aumenta, é frequentemente necessário associar conversores em série ou em paralelo. A intercalação efetivamente dobra a frequência de comutação e também cancela parcialmente as ondulações de entrada e saída, pois o tamanho dos indutores de armazenamento de energia e do filtro de interferência eletromagnética (EMI) de modo diferencial nas implementações resultantes pode ser reduzido.
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        %\subsection{Problemas de EMC em conversores estáticos} \label{cap:fund_emc_conv}
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            
-        % Para se ter uma melhor analise do problema, alguns estudos foram feitos...:
-        % - Modelagem real do circuito em simulação
-        % - Analise de trilhas (fluxo de corrente na placa)
-        % - Hot Loop (Lembrar: Trilhas chaveadas sobrepostas)
-        % - Analise de campos eletromagnéticos nos indutores
-        
-        % Schlichtings
-        % Para reduzir estas interferências é necessário compreender como as mesmas são geradas e propagadas. Assim, atualmente os estudos em conversores estáticos buscam a compreensão de:
-        
-        % Schlichting
-        % - como os conversores estáticos geram a EMI;
-        % - como a EMI se propaga no interior e para fora do conversor estático;
-        % - técnicas para reduzir a geração e propagação da EMI;
-        % - modelagem dos conversores estáticos do ponto de vista da EMC;
-        % - estudo de como as EMI’s geradas por outros equipamentos podem interferir no funcionamento destas fontes (susceptibilidade);
-        % - estudo da interferência destas fontes na rede de alimentação e também nas cargas que as mesmas alimentam.
-        
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            %\subsubsection{Problemas de EMC em conversores \interleaved} \label{cap:fund_emc_conv_inter}
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            
-            % Schlichting - p. 40
-            % Como apresentado no capítulo 1, a EMI gerada precisa de um caminho para se propagar até o receptor e a energia associada a esta EMI (amplitude/conteúdo harmônico) está relacionada às características da comutação. Devido aos diversos componentes que compõem um conversor estático a EMI gerada pode se propagar por diversos caminhos. Como a propagação de um sinal se dá pelo caminho de menor impedância, as componentes do espectro harmônico resultante da comutação se propagam por caminhos diferentes. Assim, a maior ou menor capacidade de interferência de uma harmônica está associada a sua energia e a impedância (caminho) que encontra na sua propagação. Conhecendo-se os caminhos de propagação pode-se tomar providências para reduzir a EMI gerada/propagada por um conversor estático.[28][30]
-            
-            % Schlichting - p. 40
-            % As correntes e tensões de modo comum e diferencial, por serem de naturezas (origens) diferentes, propagam-se por caminhos também diferentes. Isto faz com que encontrem em seu caminho elementos de circuito (R, L, C, capacitâncias e indutâncias de acoplamento) diferentes, conferindo-lhes EMI de amplitudes e espectros geralmente diferentes.
-            
-            % Schlichting - p. 40
-            % O conhecimento da localização e dos valores dos elementos de acoplamento é de grande importância por que, geralmente, é através deles que as altas frequências (HF – High Frequency) indesejáveis (não previstas) circulam. Porém, a determinação dos mesmos é complexa, já que na grande maioria dos casos são elementos intrínsecos/parasitas de componentes eletro-eletrônicos, trilhas, cabos e outros elementos. dos conversores estáticos.
-            
             
             
 \begin{comment}
