@@ -1,0 +1,277 @@
+\ProvidesPackage{conf-comandos}
+
+% ----------------------------------------------------------
+% Imprimir a ficha catalográfica
+% ----------------------------------------------------------
+\newcommand{\imprimirficha}[1]{
+    \begin{fichacatalografica}
+        \includepdf{#1}
+    \end{fichacatalografica}
+}
+
+% ----------------------------------------------------------
+% Imprimir a folha de aprovação
+% ----------------------------------------------------------
+\providecommand{\imprimirtextoaprovacao}{}
+\newcommand{\textoaprovacao}[1]{
+    \renewcommand{\imprimirtextoaprovacao}{
+        \begin{center}#1\end{center}
+    }
+} 
+\newcommand{\imprimiraprovacao}{
+    \begin{folhadeaprovacao}
+        \begin{center}
+            \ABNTEXchapterfont\SingleSpacing\bfseries\Large\MakeUppercase\imprimirtitulo
+            \vspace*{2.0cm}
+            
+            \ABNTEXchapterfont\normalsize\bfseries\MakeUppercase\imprimirautor
+            \vspace*{1.0cm}
+        \end{center}
+        
+        \noindent\OnehalfSpacing\imprimirtextoaprovacao
+        
+        \vspace*{1.0cm}
+        \begin{center}    
+            \imprimirlocal, 12 de março, 2021.
+        \end{center}
+        
+        \noindent Banca Examinadora:
+        
+        \assinatura{\imprimirorientador, Dr.} 
+        \assinatura{\imprimircoorientador, Dr.}
+        \assinatura{Mauro Tavares Peraça, Dr.}
+        %\assinatura{Convidado 2, Dr.}
+        \assinatura{Muriel Bittencourt de Liz, Dr.}
+        %\assinatura{Renan Augusto Starke, Dr.}
+
+    \end{folhadeaprovacao}
+}
+
+% ----------------------------------------------------------
+% Imprimir a folha de dedicatória
+% ----------------------------------------------------------
+\newcommand{\imprimirdedicatoria}[1]{
+    \begin{dedicatoria}
+        \vspace*{\fill}
+        \begin{flushright}
+        \noindent
+        \textit{#1}
+        \vspace*{2cm}
+        \end{flushright}
+    \end{dedicatoria}
+}
+
+% ----------------------------------------------------------
+% Imprimir a lista de códigos
+% ----------------------------------------------------------
+\newcommand{\listoflistings}{
+    \begin{KeepFromToc}
+        \lstlistoflistings
+    \end{KeepFromToc}
+}
+
+% ----------------------------------------------------------
+% Imprimir a lista de abreviaturas
+% ----------------------------------------------------------
+\newcommand{\sortitem}[2]{%
+    \DTLnewrow{sortlist}%
+    \DTLnewdbentry{sortlist}{sig}{#1}% 
+    \DTLnewdbentry{sortlist}{desc}{#2}% 
+}
+
+\newenvironment{sortsiglas}{%
+    \DTLifdbexists{sortlist}{\DTLcleardb{sortlist}}{\DTLnewdb{sortlist}}%
+}{%
+    \DTLsort{sig}{sortlist}% Sort list
+    \begin{siglas}%
+        \DTLforeach*{sortlist}{\theDesc=desc, \theSig=sig}{\item[\theSig] \theDesc}% Print each item
+    \end{siglas}%
+}%
+
+\makeatletter
+
+% \abreviatura{abrev.}{definição}
+% ret = 
+\newcommand{\abreviatura}[2]{%
+    \write\@auxout{\noexpand\@writefile{abrv}{\noexpand\sortitem{#1}{\xmakefirstuc{#2}}}}%
+}%
+
+% \abreviatura*{abrev.}{definição}
+% ret = abrev. (definição)
+\WithSuffix\newcommand\abreviatura*[2]{%
+    #1 (#2)%
+    \write\@auxout{\noexpand\@writefile{abrv}{\noexpand\sortitem{#1}{\xmakefirstuc{#2}}}}%
+}%
+
+% \abreviatura.{abrev.}{definição}
+% ret = definição (abrev.)
+\WithSuffix\newcommand\abreviatura.[2]{%
+    #2 (#1)%
+    \write\@auxout{\noexpand\@writefile{abrv}{\noexpand\sortitem{#1}{\xmakefirstuc{#2}}}}%
+}%
+
+% \abreviatura'{abrev.}{definição}{tradução}
+% ret = 
+\WithSuffix\newcommand\abreviatura'[3]{%
+    \write\@auxout{\noexpand\@writefile{abrv}{\noexpand\sortitem{#1}{\textit{\xmakefirstuc{#2}} - \xmakefirstuc{#3}}}}%
+}%
+
+% \abreviatura&{abrev.}{definição}{tradução}
+% ret = tradução (definição - abrev.)
+\WithSuffix\newcommand\abreviatura&[3]{%
+    #3 (\textit{#2} - #1)%
+    \write\@auxout{\noexpand\@writefile{abrv}{\noexpand\sortitem{#1}{\textit{\xmakefirstuc{#2}} - \xmakefirstuc{#3}}}}%
+}%
+
+\newcommand{\imprimirlistadeabreviaturas}{%
+    \begin{sortsiglas}%
+        \@starttoc{abrv}%
+    \end{sortsiglas}%
+}%
+\makeatother
+
+% ----------------------------------------------------------
+% Imprimir a lista de simbolos
+% ----------------------------------------------------------
+\newenvironment{sortsimbolos}{%
+    \DTLifdbexists{sortlist}{\DTLcleardb{sortlist}}{\DTLnewdb{sortlist}}%
+}{%
+    \DTLsort{desc}{sortlist}% Sort list
+    \begin{simbolos}%
+        \DTLforeach*{sortlist}{\theDesc=desc, \theSig=sig}{\item[\theSig] \theDesc}% Print each item
+    \end{simbolos}%
+}%
+
+\makeatletter
+
+% \simbolo{simbolo}{definição}
+% ret = 
+\newcommand{\simbolo}[2]{%
+    \write\@auxout{\noexpand\@writefile{asbl}{\noexpand\sortitem{#1}{#2}}}%%{\xmakefirstuc{#2}}}}%
+}%
+
+% \simbolo*{simbolo}{definição}
+% ret = simbolo
+\WithSuffix\newcommand\simbolo*[2]{%
+    #1%
+    \write\@auxout{\noexpand\@writefile{asbl}{\noexpand\sortitem{#1}{#2}}}%%{\xmakefirstuc{#2}}}}%
+}%
+
+\newcommand{\imprimirlistadesimbolos}{%
+    \begin{sortsimbolos}%
+        \@starttoc{asbl}%
+    \end{sortsimbolos}%
+}%
+\makeatother
+
+% ----------------------------------------------------------
+% Imprimir a fonte da figura
+% ----------------------------------------------------------
+\newcommand{\indentedfont}[2][\textwidth]{%
+    \captionsetup{singlelinecheck=off,width=#1}%
+    \caption*{\raggedright\footnotesize\mdseries Fonte: #2.}%
+}%
+
+% ----------------------------------------------------------
+% Incluindo códigos que estão em um arquivo externo
+% ----------------------------------------------------------
+\newcommand{\includecode}[4][c]{
+    \lstinputlisting[captionpos=t,caption=#3, label=#2,escapechar={@*}, style=#1]{#4}
+}
+%-- \includecode[linguagem]{label}{Titulo}{arquivo}
+%-- \includecode[shell]{l_olamundo}{Olá mundo em shell script}{codigos/ola.sh}
+
+% ----------------------------------------------------------
+% Comando para escrever a legenda das equações
+% ----------------------------------------------------------
+% X & Texto contendo a definição
+\newenvironment{conditions}
+    {\par\noindent Onde: \vspace{\abovedisplayskip}\\
+    \tabularx{\columnwidth}{>{$}l<{$} @{\ : } >{\raggedright\arraybackslash}X}}
+    {\endtabularx\par\vspace{\belowdisplayskip}
+}
+
+% ----------------------------------------------------------
+% Comando para escrever com subscrito em equações
+% ----------------------------------------------------------
+\newcommand{\subx}[2]{\text{#1}_\text{#2}}%
+    
+% ----------------------------------------------------------
+% Comandos para organizar a escrita
+% ----------------------------------------------------------
+% alterar | alterado | nota | add
+\newcommand{\marcador}[2]{%
+%
+    \def\param{#1}%
+    \def\ifalterar{alterar}%
+    \def\ifalterado{alterado}%
+    \def\ifnota{nota}%
+    \def\ifadic{add}%
+%
+	\ifx\param\ifalterar%
+		\textcolor{red}{#2}%
+	\else%
+		\ifx\param\ifalterado%
+	        \textcolor{blue}{#2}%
+	    \else%
+        	\ifx\param\ifnota%
+		        \textcolor{OliveGreen}{#2}%
+            \else%
+                \ifx\param\ifadic%
+    		        \textcolor{Fuchsia}{#2}%
+                \else%
+                    \textcolor{black}{#2}%
+                \fi%
+            \fi%
+        \fi%
+	\fi%
+}%
+
+\WithSuffix\newcommand\marcador*[3]{%
+%
+    \def\param{#1}%
+    \def\ifalterar{alterar}%
+    \def\ifalterado{alterado}%
+    \def\ifnota{nota}%
+    \def\ifadic{add}%
+%
+	\ifx\param\ifalterar%
+		\textcolor{red}{\underline{#2}} \textcolor{Mahogany}{(#3)}%
+	\else%
+		\ifx\param\ifalterado%
+		    \textcolor{blue}{\underline{#2}} \textcolor{NavyBlue}{(#3)}%
+	    \else%
+        	\ifx\param\ifnota%
+        	    \textcolor{OliveGreen}{\underline{#2}} \textcolor{Green}{(#3)}%
+            \else%
+                \ifx\param\ifadic%
+            	    \textcolor{Fuchsia}{#2} \textcolor{Mulberry}{(\underline{#3})}%
+                \else%
+                    \textcolor{black}{\underline{#2}} \textcolor{gray}{(#3)}%
+                \fi%
+            \fi%
+        \fi%
+	\fi%
+}%
+
+\begin{comment}
+    % Abreviatura em pt
+    \abreviatura{abrev.}{definição}  -> ret: 
+    \abreviatura*{abrev.}{definição} -> ret: abrev. (definição)
+    \abreviatura.{abrev.}{definição} -> ret: definição (abrev.)
+    % Abreviatura em língua estrangeira
+    \abreviatura'{abrev.}{definição}{tradução} -> ret:
+    \abreviatura&{abrev.}{definição}{tradução} -> ret: tradução (abrev. - definição)
+    
+    \simbolo{simbolo}{definição}  -> ret: 
+    \simbolo*{simbolo}{definição} -> ret: simbolo
+    
+    \marcador{tipo}{texto}             -> ret: texto
+    \marcador*{tipo}{texto}{alteração} -> ret: texto (alteração)
+        alterar     | alterado  | nota      | add
+        Vermelho    | Azul      | Verde     | Roxo
+    
+    \indentedfont{tamanho}{texto} -> ret: Fonte: texto.
+    
+    \includecode[linguagem]{label}{Titulo}{arquivo}
+\end{comment}

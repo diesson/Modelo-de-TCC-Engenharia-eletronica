@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introdução}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    Os conversores estáticos são amplamente utilizados em diversas aplicações, como carregadores de bateria de celular, sistema de iluminação, veículos elétricos, sistemas de potência, dentre outros. O uso de conversores estáticos convencionais como \textit{Buck}, \textit{Boost} e \textit{Buck-Boost} apresentam grande usabilidade em muitas aplicações. Porém, para potências mais elevadas, tornam-se menos adequados, uma vez que o aumento da potência nesses conversores acarreta em elementos passivos maiores, sobrecarga nos elementos semicondutores e maior perda de potência, reduzindo sua eficiência \cite{ref:BI_artigo_Falcondes}.
+    
+    Buscando-se superar essas limitações à medida que a potência desses circuitos aumenta, algumas alternativas são apresentadas, e dentre elas os conversores \interleaved (intercalados). Esses conversores utilizam dois ou mais ramos com elementos ativos em paralelo, para que assim apenas uma fração da corrente total passe por cada semicondutor. Esse processo acaba reduzindo as oscilações e duplicando a frequência de comutação de saída, em um caso com dois ramos paralelos \cite{ref:BI_artigo_Falcondes}.
+    
+    Por outro lado, devido a natureza dos conversores estáticos ser inerentemente geradora de harmônicos, há uma grande necessidade de estudá-los, uma vez que cada vez mais as aplicações necessitam ser homologadas em normas de \abreviatura&{EMC}{Eletromagnetic Compatibility}{compatibilidade eletromagnética} para que os fabricantes tenham aprovação para a revenda comercial de seus produtos \cite{ref:EMC_artigo_Texas}.
+    
+    Assim, este trabalho busca verificar o comportamento de um conversor estático \mbox{CC-CC} do tipo Buck \interleaved de dois ramos paralelos do ponto de vista de compatibilidade eletromagnética e aplicar algumas técnicas para a mitigação do ruído presente nesse conversor. Neste trabalho será usada uma norma vigente com a finalidade de facilitar a visualização dos resultados obtidos, porém, não sendo o objetivo deste se adequar a ela.
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Justificativa}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Seria interessante contextualizar algumas aplicações do conversor Buck interleaved, pois qual é a necessidade de se estudar tais técnicas em um conversor que talvez não se use? Teria que ver onde se enquadra as aplicações para tornar atrativo tal estudo
+        
+        Devido à preocupação dos fabricantes para que seus produtos tenham homologação perante as normas de EMC para obter permissão de comercialização, faz-se importante o estudo de conversores estáticos do ponto de vista de compatibilidade eletromagnética.
+        
+        Segundo \citeonline{ref:BI_phd_Peraca}, no que diz respeito a conversores estáticos, dentre as estratégias utilizadas em conversores que operam com elevadas correntes, tem-se a técnica do interleaving. Assim, torna-se importante o estudo de EMC de tal conversor, realizando uma análise do ruído conduzido e irradiado gerado por tal estrutura, bem como uma análise de possíveis técnicas para a mitigação desse ruído.
+        Sendo esse conhecimento de grande valia, tanto para o meio acadêmico quanto para a indústria.
+        
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Descrição do problema}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        O conversor Buck \interleaved, por se tratar de um conversor estático de potência, produz harmônicos, principalmente devido a comutações dos semicondutores. Em geral, esses harmônicos se propagam por diferentes meios, tanto por uma conexão elétrica quanto pelo ar, podendo provocar o mal funcionamento em outros equipamentos e a si próprio. Para se evitar a geração e propagação de harmônicos, faz-se importante a aplicação de técnicas ou conjuntos de técnicas de mitigação da interferência eletromagnética.
+        
+        % O conversor Buck \interleaved, por se tratar de um conversor estático de potência, apresenta ruídos, principalmente devido a comutações dos semicondutores. Em geral, esse ruído se propaga por diferentes meios, tanto por uma conexão elétrica quanto pelo ar, podendo provocar interferência eletromagnética em outros equipamentos e a si próprio. 
+        
+        %\marcador{alterar}{Assim, o uso de técnicas como a remoção dos dissipadores do circuito, alteração dos tempos de subida no chaveamento dos transistores, uso de um ferrite \textit{bead} e reposicionamento dos elementos magnéticos (indutores) são muitas vezes utilizadas para a redução da interferência eletromagnética em conversores estáticos, por confinar o ruído dentro do conversor chaveado e/ou do componente gerador.}
+        
+        Dessa forma, a questão-problema que orienta este Trabalho de Conclusão de Curso é: Quais técnicas podem ser aplicadas e qual a eficácia dessas técnicas para a redução da interferência eletromagnética em um conversor estático do tipo Buck \interleaved?
+        
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Objetivo geral}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+        Analisar quais técnicas podem ser aplicadas e qual a eficácia dessas técnicas para a redução de interferência eletromagnética em um conversor estático do tipo Buck \interleaved.
+    
+        %Analisar se o conversor estático do tipo Buck \interleaved pode ser utilizado com técnicas de \marcador*{alterar}{redução da interferência eletromagnética.}{melhorar o objetivo}
+        % o uso de técnicas de redução de ruído \marcador*{alterar}{conduzido e irradiado}{EMI} em um conversor estático do tipo Buck \interleaved.
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Objetivos específicos}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+        Com o objetivo geral apresentado, destaca-se os seguintes objetivos específicos: 
+    
+        \begin{alineas}
+            %\item conceituar conversores estáticos;
+            
+            \item revisar a bibliografia referente a Buck \interleaved, apresentando a forma de funcionamento do circuito, vantagens e desvantagens;
+            
+            \item conceituar compatibilidade eletromagnética, formas de geração de ruído e técnicas para mitigação;
+            
+            \item projeto do conversor Buck \interleaved;
+            
+            %\item análise do circuito e placa de circuito impresso do conversor;
+            
+            \item análise do ponto de vista de compatibilidade eletromagnética do conversor Buck \interleaved;
+            
+            \item aplicação de técnicas para mitigação da interferência eletromagnética e análise dos resultados obtidos.
+            
+        \end{alineas}

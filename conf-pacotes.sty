@@ -1,0 +1,83 @@
+\ProvidesPackage{conf-pacotes}
+
+% ----------------------------------------------------------
+% Fontes para equações
+% ----------------------------------------------------------
+%\usepackage{sansmathfonts} 
+%\usepackage[eulergreek]{sansmath} \sansmath
+%\usepackage{arev}
+
+% ----------------------------------------------------------
+% ABNTEX
+% ----------------------------------------------------------
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[scaled=1]{helvet}   % Fonte Arial 
+\usepackage[helvet]{sfmath}
+%\everymath{\mathsf{\xdef\mysf{\mathgroup\the\mathgroup\relax}}\mysf} % Remover itálico das equações $$
+
+%\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{listings}           % Inclusão de códigos de softwares
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{url,listings,color}
+\usepackage[fleqn]{amsmath}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[printonlyused,withpage]{acronym}
+\usepackage[withpage]{acronym}
+\usepackage{lipsum}				% para geração de dummy text
+\usepackage{float}              % Inclusão de numeros float
+\usepackage[final]{pdfpages}    % Inclusão de PDFs
+\usepackage{lipsum}				% para geração de dummy text
+
+% ----------------------------------------------------------
+% Usados no anexo do modelo de folha de identificação
+% ----------------------------------------------------------
+\usepackage{multicol}
+\usepackage{multirow}
+
+% ----------------------------------------------------------
+% Pacotes de citações
+% ----------------------------------------------------------
+\usepackage[brazilian,hyperpageref]{backref}    % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	                % Citações padrão ABNT
+
+% ----------------------------------------------------------
+% Outros
+% ----------------------------------------------------------
+\usepackage[brazil]{babel}	% coloca as coisas em portugues no sumário.
+\usepackage[normalem]{ulem}	% provê sublinhados para textos (\ul)
+
+%\usepackage{remreset}		% reinicia contadores
+\usepackage{setspace}       % pacote para espaçamentos
+\usepackage{textcomp}       % pacote para simbolos REGISTERED e ESPECIAL
+%\usepackage{pgfplots}      % pacote para uso do pgfplots
+
+% ----------------------------------------------------------
+% Meus pacotes
+% ----------------------------------------------------------
+\usepackage[binary-units=true]{siunitx}        % http://tug.ctan.org/macros/latex/exptl/siunitx/siunitx.pdf
+\sisetup{locale = DE}
+
+\usepackage{mathrsfs}
+%\usepackage[pdftex]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\setlength{\mathindent}{0pt}                % remover margem antes das equações
+
+%% --- Remover conflito com ABNTex ---
+\let\su@ExpandTwoArgs\relax
+\let\IfSubStringInString\relax
+\let\su@IfSubStringInString\relax
+%% -----------------------------------
+
+\usepackage{datatool}       % Ordenar a lista de abrev. e simbolos
+\usepackage{mfirstuc}       % Usada para deixar a primeira letra maiúscula
+\usepackage{xspace}         % Colocar espaço após macro
+
+\usepackage{array,tabularx} % Usando para criar as legenda das equações
+\usepackage{soul}           % Para o underline
