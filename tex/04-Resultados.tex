@@ -21,17 +21,17 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
             \hline
              & Valor & Unid. \\
             \hline
-            Tensão de entrada               & 24    & \si{\volt}      \\ \hline
-            Tensão de saída                 & 5     & \si{\volt}      \\ \hline
-            Variação da tensão de saída     & 1     & \si{\percent}    \\ \hline
-            Corrente de saída               & 5     & \si{\ampere}     \\ \hline
-            Variação da corrente do indutor & 100   & \si{\percent}    \\ \hline
-            Frequência de chaveamento       & 50    & \si{\kilo\hertz} \\ \hline
+            Tensão de entrada               & 24    & \unit{\volt}      \\ \hline
+            Tensão de saída                 & 5     & \unit{\volt}      \\ \hline
+            Variação da tensão de saída     & 1     & \unit{\percent}    \\ \hline
+            Corrente de saída               & 5     & \unit{\ampere}     \\ \hline
+            Variação da corrente do indutor & 100   & \unit{\percent}    \\ \hline
+            Frequência de chaveamento       & 50    & \unit{\kilo\hertz} \\ \hline
         \end{tabular}
         \indentedfont[0.84\textwidth]{Elaboração própria (2021)}
     \end{table}
     
-    Com essas especificações, torna-se possível calcular os componentes de filtro do conversor, utilizando a \autoref{eq:buck_indutor} e a \autoref{eq:cbi_capacitor}. Assim, é obtido o valor de indutância de \SI{31}{\micro\henry} e uma capacitância de \SI{46}{\micro\farad}. A \autoref{fig:esquematico_cbi} apresenta o esquemático desenvolvido no \textit{software} KiCad para a estrutura proposta. Nesse circuito, foi utilizado o \abreviatura.{CI}{circuito integrado} SG3525 para o acionamento dos transistores e adicionados alguns capacitores de filtro de alta frequência (C3, C4, C5 e C7) como boas práticas no desenvolvimento de um \textit{Layout}. Os indutores em L1 e o indutor L2 foram dispostos de tal forma que posteriormente o circuito pudesse ser adaptado para um conversor 3SSC.
+    Com essas especificações, torna-se possível calcular os componentes de filtro do conversor, utilizando a \autoref{eq:buck_indutor} e a \autoref{eq:cbi_capacitor}. Assim, é obtido o valor de indutância de \qty{31}{\micro\henry} e uma capacitância de \qty{46}{\micro\farad}. A \autoref{fig:esquematico_cbi} apresenta o esquemático desenvolvido no \textit{software} KiCad para a estrutura proposta. Nesse circuito, foi utilizado o \abreviatura.{CI}{circuito integrado} SG3525 para o acionamento dos transistores e adicionados alguns capacitores de filtro de alta frequência (C3, C4, C5 e C7) como boas práticas no desenvolvimento de um \textit{Layout}. Os indutores em L1 e o indutor L2 foram dispostos de tal forma que posteriormente o circuito pudesse ser adaptado para um conversor 3SSC.
     
     \begin{figure}[H]
     	\centering
@@ -61,7 +61,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Finalizada a PCB, se iniciou os testes elétricos do CBI de dois ramos, para que fosse possível a validação do seu correto funcionamento. Nesses testes, foi percebido que, devido à elevada variação da corrente de saída, de aproximadamente \SI{2}{\ampere}, segundo \citeonline{ref:esr_capacitor}, o capacitor utilizado necessitaria de uma ESR máxima de \SI{6}{\milli$\Omega$}, para que assim fosse possível atender as especificações da variação de tensão de saída. Dessa forma, pela disponibilidade e dificuldade para se obter capacitores com ESR tão baixa, foi utilizado em paralelo dois capacitores eletrolítico de baixa resistência série, com valor de capacitância de \SI{470}{\micro\farad}. Assim, a \autoref{fig:esquematico_cbi_1} apresenta, sem o circuito de acionamento, o circuito de potência do conversor utilizado. 
+    Finalizada a PCB, se iniciou os testes elétricos do CBI de dois ramos, para que fosse possível a validação do seu correto funcionamento. Nesses testes, foi percebido que, devido à elevada variação da corrente de saída, de aproximadamente \qty{2}{\ampere}, segundo \citeonline{ref:esr_capacitor}, o capacitor utilizado necessitaria de uma ESR máxima de \qty{6}{\milli$\Omega$}, para que assim fosse possível atender as especificações da variação de tensão de saída. Dessa forma, pela disponibilidade e dificuldade para se obter capacitores com ESR tão baixa, foi utilizado em paralelo dois capacitores eletrolítico de baixa resistência série, com valor de capacitância de \qty{470}{\micro\farad}. Assim, a \autoref{fig:esquematico_cbi_1} apresenta, sem o circuito de acionamento, o circuito de potência do conversor utilizado. 
     
     \begin{figure}[H]
     	\centering
@@ -81,7 +81,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Após essas alterações, com exceção da variação da tensão de saída que permaneceu em \SI{2}{\%}, todos os demais requisitos elétricos estabelecidos para o projeto puderam ser alcançados e validados. Devido à especificação da variação da tensão de saída ser muita pequena, optou-se por mantê-la em \SI{2}{\%}, ao invés de aumentar a capacitância de saída.
+    Após essas alterações, com exceção da variação da tensão de saída que permaneceu em \qty{2}{\%}, todos os demais requisitos elétricos estabelecidos para o projeto puderam ser alcançados e validados. Devido à especificação da variação da tensão de saída ser muita pequena, optou-se por mantê-la em \qty{2}{\%}, ao invés de aumentar a capacitância de saída.
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{Padronização de medidas} \label{cap:result_padrao}
@@ -129,7 +129,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Nota-se pela figura que o conversor proposto apresenta elevados níveis de ruído conduzido em frequências múltiplas de \SI{100}{\kilo\hertz}. Tal fato se dá devido à haver no circuito dois chaveamentos em uma frequência de \SI{50}{\kilo\hertz} defasados em \SI{180}{\degree}. Ainda, destaca-se que há uma redução progressiva na amplitude dos harmônicos medidos, voltando a crescer após a frequência de \SI{3}{\mega\hertz}, com um pico em torno da frequência de \SI{20}{\mega\hertz}.
+    Nota-se pela figura que o conversor proposto apresenta elevados níveis de ruído conduzido em frequências múltiplas de \qty{100}{\kilo\hertz}. Tal fato se dá devido à haver no circuito dois chaveamentos em uma frequência de \qty{50}{\kilo\hertz} defasados em \qty{180}{\degree}. Ainda, destaca-se que há uma redução progressiva na amplitude dos harmônicos medidos, voltando a crescer após a frequência de \qty{3}{\mega\hertz}, com um pico em torno da frequência de \qty{20}{\mega\hertz}.
     
     Na \autoref{fig:med_rad_circ_inic} temos a medida inicial de EMI irradiada do CBI de dois ramos. 
     
@@ -141,7 +141,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Nessa figura é possível observar alguns picos com amplitudes mais elevadas nas frequência do entorno de \SI{58}{\mega\hertz}, \SI{85}{\mega\hertz}, \SI{93}{\mega\hertz}, \SI{115}{\mega\hertz}, \SI{136}{\mega\hertz}, \SI{170}{\mega\hertz} e \SI{230}{\mega\hertz}, sendo esses picos de maior interesse de redução durante os testes das técnicas.
+    Nessa figura é possível observar alguns picos com amplitudes mais elevadas nas frequência do entorno de \qty{58}{\mega\hertz}, \qty{85}{\mega\hertz}, \qty{93}{\mega\hertz}, \qty{115}{\mega\hertz}, \qty{136}{\mega\hertz}, \qty{170}{\mega\hertz} e \qty{230}{\mega\hertz}, sendo esses picos de maior interesse de redução durante os testes das técnicas.
     
     Com as medidas obtidas, analisando o conversor proposto e a bibliografia, escolheu-se algumas técnicas de mitigação de EMI. As técnicas utilizadas foram apresentadas conforme o ponto de aplicação, sendo elas: o dissipador, o transistor, o indutor e a estrutura do conversor. 
     
@@ -179,7 +179,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Pela figura, percebe-se uma pequena alteração dos resultados obtidos. No entorno das frequências de \SI{58}{\mega\hertz} e \SI{93}{\mega\hertz} houve um pequeno acréscimo na emissão irradiada, enquanto nas frequências de \SI{85}{\mega\hertz} e \SI{170}{\mega\hertz} se obteve uma redução. Dessa forma, essa técnica não apresentou grandes benefícios para a redução das emissões. 
+    Pela figura, percebe-se uma pequena alteração dos resultados obtidos. No entorno das frequências de \qty{58}{\mega\hertz} e \qty{93}{\mega\hertz} houve um pequeno acréscimo na emissão irradiada, enquanto nas frequências de \qty{85}{\mega\hertz} e \qty{170}{\mega\hertz} se obteve uma redução. Dessa forma, essa técnica não apresentou grandes benefícios para a redução das emissões. 
     
     Outra medida realizada, relacionada aos dissipadores, foi a conexão do dissipador a referência utilizando um capacitor cerâmico $\subx{C}{D}$, conforme \autoref{fig:esquematico_cbi_2}. O capacitor foi necessário devido ao dissipador não estar isolado e, portanto, conectado diretamente ao dreno do transistor. Nesta técnica, busca-se criar um caminho de menor impedância para os harmônicos gerados, evitado que o mesmo seja irradiado pelo dissipador. 
     
@@ -202,57 +202,57 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Para esse ensaio, foram arbitrados dois capacitores de diferentes valores, \SI{1}{\nano\farad} e \SI{100}{\nano\farad}, para que fosse possível verificar os impactos gerados pelos valores escolhidos. A \autoref{fig:med_cond_cap1n_dissip} apresenta um comparativo dos resultados obtidos do ensaio de emissão conduzida para o circuito com os dissipadores desconectados e conectados à referência via capacitor de \SI{1}{\nano\farad}.
+    Para esse ensaio, foram arbitrados dois capacitores de diferentes valores, \qty{1}{\nano\farad} e \qty{100}{\nano\farad}, para que fosse possível verificar os impactos gerados pelos valores escolhidos. A \autoref{fig:med_cond_cap1n_dissip} apresenta um comparativo dos resultados obtidos do ensaio de emissão conduzida para o circuito com os dissipadores desconectados e conectados à referência via capacitor de \qty{1}{\nano\farad}.
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão conduzida para o circuito com os dissipadores desconectados e conectados à referência via capacitor de \SI{1}{\nano\farad}}
+    	\caption{Comparação dos resultados do ensaio de emissão conduzida para o circuito com os dissipadores desconectados e conectados à referência via capacitor de \qty{1}{\nano\farad}}
     	\includegraphics[scale=.9]{pdf/cond/Conectar o dissipador a referência (Capacitor de 1nF).pdf}
     	\label{fig:med_cond_cap1n_dissip}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Percebe-se que o uso do capacitor, diferentemente da remoção dos dissipadores, impactou na emissão conduzida do ruído. É possível observar na medida que, após a alteração, os harmônicos múltiplos de \SI{50}{\kilo\hertz} estão com maior amplitude do que na medida inicial. Ainda, no entorno da frequência de \SI{20}{\mega\hertz} é perceptível um aumento ainda mais acentuado dos harmônicos. 
+    Percebe-se que o uso do capacitor, diferentemente da remoção dos dissipadores, impactou na emissão conduzida do ruído. É possível observar na medida que, após a alteração, os harmônicos múltiplos de \qty{50}{\kilo\hertz} estão com maior amplitude do que na medida inicial. Ainda, no entorno da frequência de \qty{20}{\mega\hertz} é perceptível um aumento ainda mais acentuado dos harmônicos. 
     
-    A medida de emissão irradiada desse teste, para o circuito com os dissipadores conectados à referência via capacitor de \SI{1}{\nano\farad}, pode ser observado na \autoref{fig:med_rad_cap1n_dissip}. 
+    A medida de emissão irradiada desse teste, para o circuito com os dissipadores conectados à referência via capacitor de \qty{1}{\nano\farad}, pode ser observado na \autoref{fig:med_rad_cap1n_dissip}. 
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão irradiada para o circuito com os dissipadores desconectados e conectados à referência via capacitor de \SI{1}{\nano\farad}}
+    	\caption{Comparação dos resultados do ensaio de emissão irradiada para o circuito com os dissipadores desconectados e conectados à referência via capacitor de \qty{1}{\nano\farad}}
     	\includegraphics[scale=.9]{pdf/rad/Conectar o dissipador a referência (Capacitor de 1nF).pdf}
     	\label{fig:med_rad_cap1n_dissip}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Nessa figura, observa-se que houve grandes reduções em dois principais picos da emissão irradiada nas frequências de \SI{58}{\mega\hertz} e \SI{115}{\mega\hertz}. Ainda, destaca-se a redução de amplitude em frequências inferiores a \SI{70}{\mega\hertz}. Porém, têm-se uma elevação na amplitude em outras frequências. 
+    Nessa figura, observa-se que houve grandes reduções em dois principais picos da emissão irradiada nas frequências de \qty{58}{\mega\hertz} e \qty{115}{\mega\hertz}. Ainda, destaca-se a redução de amplitude em frequências inferiores a \qty{70}{\mega\hertz}. Porém, têm-se uma elevação na amplitude em outras frequências. 
     
-    Essa técnica, utilizando um capacitor de \SI{1}{\nano\farad}, apesar de apresentar melhoras em determinadas frequências na emissão irradiada, apresentou pioras em outras frequências, inclusive na emissão conduzida. A \autoref{fig:med_cond_cap100n_dissip} apresenta a mesma técnica, porém utilizando um capacitor de \SI{100}{\nano\farad}, para a emissão conduzida.
+    Essa técnica, utilizando um capacitor de \qty{1}{\nano\farad}, apesar de apresentar melhoras em determinadas frequências na emissão irradiada, apresentou pioras em outras frequências, inclusive na emissão conduzida. A \autoref{fig:med_cond_cap100n_dissip} apresenta a mesma técnica, porém utilizando um capacitor de \qty{100}{\nano\farad}, para a emissão conduzida.
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão conduzida para o circuito com os dissipadores desconectados e conectados a referência via capacitor de \SI{100}{\nano\farad}}
+    	\caption{Comparação dos resultados do ensaio de emissão conduzida para o circuito com os dissipadores desconectados e conectados a referência via capacitor de \qty{100}{\nano\farad}}
     	\includegraphics[scale=.9]{pdf/cond/Conectar o dissipador a referência (Capacitor de 100nF).pdf}
     	\label{fig:med_cond_cap100n_dissip}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Nota-se que, diferente do resultado obtido para um capacitor de \SI{1}{\nano\farad}, ao utilizar um capacitor cerâmico de \SI{100}{\nano\farad}, há uma redução da amplitude da emissão conduzida no entorno da frequência de \SI{20}{\mega\hertz}. 
+    Nota-se que, diferente do resultado obtido para um capacitor de \qty{1}{\nano\farad}, ao utilizar um capacitor cerâmico de \qty{100}{\nano\farad}, há uma redução da amplitude da emissão conduzida no entorno da frequência de \qty{20}{\mega\hertz}. 
     
     O comparativo da emissão irradiada desse teste, para o circuito com os dissipadores conectados e desconectados da referência pode ser observado na \autoref{fig:med_rad_cap100n_dissip}.
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão irradiada para o circuito com os dissipadores desconectados e conectados a referência via capacitor de \SI{100}{\nano\farad}}
+    	\caption{Comparação dos resultados do ensaio de emissão irradiada para o circuito com os dissipadores desconectados e conectados a referência via capacitor de \qty{100}{\nano\farad}}
     	\includegraphics[scale=.9]{pdf/rad/Conectar o dissipador a referência (Capacitor de 100nF).pdf}
     	\label{fig:med_rad_cap100n_dissip}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Na figura, pode-se verificar que o uso de um capacitor de \SI{100}{\nano\farad} gerou uma grande redução nos níveis de emissão irradiada para quase todas as frequências, com exceção de poucas frequências, como o caso do entorno de \SI{170}{\mega\hertz}. Assim, percebe-se que, para o conversor proposto, o uso da técnica de aterramento do dissipador apresenta melhores resultados, se comparado a remoção do dissipador. Porém, a escolha do valor da capacitância é de grande impacto nos resultados, como pode-se observar na \autoref{fig:med_cond_cap1n_cap100n_dissip}, que apresenta o comparativos dos resultados obtidos da emissão conduzida.
+    Na figura, pode-se verificar que o uso de um capacitor de \qty{100}{\nano\farad} gerou uma grande redução nos níveis de emissão irradiada para quase todas as frequências, com exceção de poucas frequências, como o caso do entorno de \qty{170}{\mega\hertz}. Assim, percebe-se que, para o conversor proposto, o uso da técnica de aterramento do dissipador apresenta melhores resultados, se comparado a remoção do dissipador. Porém, a escolha do valor da capacitância é de grande impacto nos resultados, como pode-se observar na \autoref{fig:med_cond_cap1n_cap100n_dissip}, que apresenta o comparativos dos resultados obtidos da emissão conduzida.
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão conduzida para o circuito com os dissipadores conectados a referência via capacitor de \SI{1}{\nano\farad} e \SI{100}{\nano\farad}}
+    	\caption{Comparação dos resultados do ensaio de emissão conduzida para o circuito com os dissipadores conectados a referência via capacitor de \qty{1}{\nano\farad} e \qty{100}{\nano\farad}}
     	\includegraphics[scale=.85]{pdf/cond/cond-Conectar o dissipador a referência (Capacitor de 1nF)-Conectar o dissipador a referência (Capacitor de 100nF).pdf}
     	\label{fig:med_cond_cap1n_cap100n_dissip}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
@@ -262,7 +262,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão irradiada para o circuito com os dissipadores conectados a referência via capacitor de \SI{1}{\nano\farad} e \SI{100}{\nano\farad}}
+    	\caption{Comparação dos resultados do ensaio de emissão irradiada para o circuito com os dissipadores conectados a referência via capacitor de \qty{1}{\nano\farad} e \qty{100}{\nano\farad}}
     	\includegraphics[scale=.85]{pdf/rad/Conectar o dissipador a referência (Capacitor de 1nF)-Conectar o dissipador a referência (Capacitor de 100nF).pdf}
     	\label{fig:med_rad_cap1n_cap100n_dissip}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
@@ -272,7 +272,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     \subsection{Técnicas relacionadas ao elemento transistor} \label{cap:result_tecnicas_chaveam}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    Outra técnica avaliada por esse trabalho, relacionada ao chaveamento do transistor, consiste no aumento do tempo de subida do sinal de dreno. Para esse teste, foi feita uma alteração nos resistores R8 e R9, conforme \autoref{fig:esquematico_cbi_3}, que possuíam valores iniciais de \SI{22}{$\Omega$} (com tempo de subida $\subx{t}{r}$ medido em osciloscópio de \SI{138}{\nano\second}) para um valor de \SI{62}{$\Omega$} (com tempo de subida $\subx{t}{r}$ medido em osciloscópio de \SI{255}{\nano\second}). 
+    Outra técnica avaliada por esse trabalho, relacionada ao chaveamento do transistor, consiste no aumento do tempo de subida do sinal de dreno. Para esse teste, foi feita uma alteração nos resistores R8 e R9, conforme \autoref{fig:esquematico_cbi_3}, que possuíam valores iniciais de \qty{22}{$\Omega$} (com tempo de subida $\subx{t}{r}$ medido em osciloscópio de \qty{138}{\nano\second}) para um valor de \qty{62}{$\Omega$} (com tempo de subida $\subx{t}{r}$ medido em osciloscópio de \qty{255}{\nano\second}). 
     
     \begin{figure}[H]
     	\centering
@@ -282,11 +282,11 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[12.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Assim, a \autoref{fig:med_cond_temp_sub} apresenta um comparativo da emissão conduzida entre os resultados obtidos para o circuito inicial ($\subx{t}{r}$ de \SI{138}{\nano\second}) e circuito após alteração dos resistores ($\subx{t}{r}$ de \SI{255}{\nano\second}). 
+    Assim, a \autoref{fig:med_cond_temp_sub} apresenta um comparativo da emissão conduzida entre os resultados obtidos para o circuito inicial ($\subx{t}{r}$ de \qty{138}{\nano\second}) e circuito após alteração dos resistores ($\subx{t}{r}$ de \qty{255}{\nano\second}). 
     
     \begin{figure}[H]
     	\centering 
-    	\caption{Comparação dos resultados do ensaio de emissão conduzida para um tempo de subida do sinal no dreno do transistor de \SI{138}{\nano\second} e \SI{255}{\nano\second}}
+    	\caption{Comparação dos resultados do ensaio de emissão conduzida para um tempo de subida do sinal no dreno do transistor de \qty{138}{\nano\second} e \qty{255}{\nano\second}}
     	\includegraphics[scale=.9]{pdf/cond/Aumento do tr do transistor2.pdf}
     	\label{fig:med_cond_temp_sub}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
@@ -296,13 +296,13 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão irradiada para um tempo de subida do sinal no dreno do transistor de \SI{138}{\nano\second} e \SI{255}{\nano\second}}
+    	\caption{Comparação dos resultados do ensaio de emissão irradiada para um tempo de subida do sinal no dreno do transistor de \qty{138}{\nano\second} e \qty{255}{\nano\second}}
     	\includegraphics[scale=.9]{pdf/rad/Aumento do tr do transistor2.pdf}
     	\label{fig:med_rad_temp_sub}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Na emissão irradiada também não houve grandes impactos gerados pela técnica. Esse resultado é devido ao tempo de subida no dreno já ser grande (proveniente do resistor de \SI{22}{$\Omega$}) e assim, esse aumento no tempo de subida, não surtiu efeito para as emissões. 
+    Na emissão irradiada também não houve grandes impactos gerados pela técnica. Esse resultado é devido ao tempo de subida no dreno já ser grande (proveniente do resistor de \qty{22}{$\Omega$}) e assim, esse aumento no tempo de subida, não surtiu efeito para as emissões. 
     
     Ainda relacionado ao dreno do transistor, outra técnica empregada no circuito foi o uso de um núcleo de ferrite \textit{bead} nos terminais de dreno do transistor, como mostrado na \autoref{fig:esquematico_cbi_4}. 
     
@@ -344,7 +344,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Essa técnica mostrou grande eficácia na redução do ruído irradiado, ao contrário da emissão conduzida. Como pode-se observar, a técnica apresentou redução em uma larga faixa de frequência (entre \SI{30}{\mega\hertz} e \SI{200}{\mega\hertz}), com apenas dois picos próximos dos valores iniciais medidos (\SI{93}{\mega\hertz} e \SI{170}{\mega\hertz}).
+    Essa técnica mostrou grande eficácia na redução do ruído irradiado, ao contrário da emissão conduzida. Como pode-se observar, a técnica apresentou redução em uma larga faixa de frequência (entre \qty{30}{\mega\hertz} e \qty{200}{\mega\hertz}), com apenas dois picos próximos dos valores iniciais medidos (\qty{93}{\mega\hertz} e \qty{170}{\mega\hertz}).
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \subsection{Técnica relacionada ao elemento indutor} \label{cap:result_tecnicas_indut}
@@ -401,7 +401,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Nota-se uma pequena redução no entorno das frequências de \SI{85}{\mega\hertz}, \SI{93}{\mega\hertz}, \SI{115}{\mega\hertz}, \SI{170}{\mega\hertz} e \SI{230}{\mega\hertz}, que apesar de miníma, ainda torna-se relevante. 
+    Nota-se uma pequena redução no entorno das frequências de \qty{85}{\mega\hertz}, \qty{93}{\mega\hertz}, \qty{115}{\mega\hertz}, \qty{170}{\mega\hertz} e \qty{230}{\mega\hertz}, que apesar de miníma, ainda torna-se relevante. 
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \subsection{Técnica relacionada ao conversor 3SSC} \label{cap:result_tecnicas_3ssc}
@@ -409,7 +409,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     A última técnica estudada neste trabalho foi a alteração da estrutura de um conversor Buck \interleaved para um conversor com célula de comutação de três estados. Nessa técnica o objetivo é utilizar a estrutura para reduzir a frequência de chaveamento, mantendo a dimensão dos elementos de filtro. 
     
-    Nesse teste, optou-se pelo uso da frequência de chaveamento de \SI{20}{\kilo\hertz}, para que a frequência do harmônico fundamental do chaveamento esteja longe da faixa medida pelo teste de emissão conduzida. Para tal, alguns componentes presentes na PCB do circuito inicial precisam ser alterados, sendo eles: o indutor L3 deve ser adicionado, os indutores L1 e L2 devem ser substituídos por um autotransformador, os capacitores de saída (C6 e C7) devem ser calculados para a nova estrutura. A \autoref{fig:esquematico_cbi_5} apresenta, sem o circuito de acionamento, o circuito do conversor 3SSC utilizado. 
+    Nesse teste, optou-se pelo uso da frequência de chaveamento de \qty{20}{\kilo\hertz}, para que a frequência do harmônico fundamental do chaveamento esteja longe da faixa medida pelo teste de emissão conduzida. Para tal, alguns componentes presentes na PCB do circuito inicial precisam ser alterados, sendo eles: o indutor L3 deve ser adicionado, os indutores L1 e L2 devem ser substituídos por um autotransformador, os capacitores de saída (C6 e C7) devem ser calculados para a nova estrutura. A \autoref{fig:esquematico_cbi_5} apresenta, sem o circuito de acionamento, o circuito do conversor 3SSC utilizado. 
     
     \begin{figure}[H]
     	\centering
@@ -419,7 +419,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[13.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Utilizando a \autoref{eq:3ssc_indutor} e a \autoref{eq:3ssc_capacitor}, calculou-se os novos valores de indutância e capacitância para a nova estrutura (para uma frequência de \SI{20}{\kilo\hertz}), obtendo os valores de \SI{36}{\micro\henry} e \SI{198}{\micro\farad}, respectivamente. Porém, devido a disponibilidade de capacitores de baixo valore de ESR, manteve-se os valores de capacitância já utilizados (dois capacitores eletrolíticos de \SI{470}{\micro\farad}). 
+    Utilizando a \autoref{eq:3ssc_indutor} e a \autoref{eq:3ssc_capacitor}, calculou-se os novos valores de indutância e capacitância para a nova estrutura (para uma frequência de \qty{20}{\kilo\hertz}), obtendo os valores de \qty{36}{\micro\henry} e \qty{198}{\micro\farad}, respectivamente. Porém, devido a disponibilidade de capacitores de baixo valore de ESR, manteve-se os valores de capacitância já utilizados (dois capacitores eletrolíticos de \qty{470}{\micro\farad}). 
     
     Para minimizar os impactos gerados pela alteração do circuito, o indutor e o autotransformador projetados utilizaram o mesmo tipo de núcleo dos indutores do projeto inicial. Em todos os testes realizados com essa estrutura, os requisitos elétricos foram validados. 
     
@@ -433,11 +433,11 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Assim, a \autoref{fig:med_cond_3ssc20k_EG} apresenta a comparação dos resultados obtidos da emissão conduzida para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \SI{20}{\kilo\hertz}.
+    Assim, a \autoref{fig:med_cond_3ssc20k_EG} apresenta a comparação dos resultados obtidos da emissão conduzida para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \qty{20}{\kilo\hertz}.
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão conduzida para um CBI e um conversor 3SSC com uma frequência de chaveamento de \SI{20}{\kilo\hertz}}
+    	\caption{Comparação dos resultados do ensaio de emissão conduzida para um CBI e um conversor 3SSC com uma frequência de chaveamento de \qty{20}{\kilo\hertz}}
     	\includegraphics[scale=.9]{pdf/cond/Conversor 3SSC (freq. de 20kHz).pdf}
     	\label{fig:med_cond_3ssc20k_EG}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
@@ -445,23 +445,23 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     Nota-se nesse teste que, diferente das técnicas anteriores, foi possível reduzir consideravelmente os níveis de emissão conduzida em toda a faixa avaliada. 
     
-    Na \autoref{fig:med_rad_3ssc20k_EG}, tem-se o comparativo dos resultados da emissão irradiada para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \SI{20}{\kilo\hertz}.
+    Na \autoref{fig:med_rad_3ssc20k_EG}, tem-se o comparativo dos resultados da emissão irradiada para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \qty{20}{\kilo\hertz}.
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão irradiada para um CBI e um conversor 3SSC com uma frequência de chaveamento de \SI{20}{\kilo\hertz}}
+    	\caption{Comparação dos resultados do ensaio de emissão irradiada para um CBI e um conversor 3SSC com uma frequência de chaveamento de \qty{20}{\kilo\hertz}}
     	\includegraphics[scale=.9]{pdf/rad/Conversor 3SSC (freq. de 20kHz).pdf}
     	\label{fig:med_rad_3ssc20k_EG}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Diferente do teste de emissão conduzida, na emissão irradiada, houve um acréscimo nos níveis emitidos, para frequências inferiores \SI{170}{\mega\hertz}. 
+    Diferente do teste de emissão conduzida, na emissão irradiada, houve um acréscimo nos níveis emitidos, para frequências inferiores \qty{170}{\mega\hertz}. 
     
-    Durante os testes, percebeu-se que uma possível causa do aumento nos níveis de irradiação poderia ser o tamanho do entreferro escolhido para o indutor L3. Dessa forma, o indutor foi reprojetado, utilizando um entreferro menor, mantendo o seu valor de indutância. A \autoref{fig:med_cond_3ssc20k} apresenta a comparação dos resultados obtidos da emissão conduzida para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \SI{20}{\kilo\hertz} para um entreferro reduzido.
+    Durante os testes, percebeu-se que uma possível causa do aumento nos níveis de irradiação poderia ser o tamanho do entreferro escolhido para o indutor L3. Dessa forma, o indutor foi reprojetado, utilizando um entreferro menor, mantendo o seu valor de indutância. A \autoref{fig:med_cond_3ssc20k} apresenta a comparação dos resultados obtidos da emissão conduzida para o circuito inicial (CBI) e para a nova estrutura (conversor 3SSC) em uma frequência de \qty{20}{\kilo\hertz} para um entreferro reduzido.
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão conduzida para um CBI e um conversor 3SSC com uma frequência de chaveamento de \SI{20}{\kilo\hertz} para um entreferro reduzido}
+    	\caption{Comparação dos resultados do ensaio de emissão conduzida para um CBI e um conversor 3SSC com uma frequência de chaveamento de \qty{20}{\kilo\hertz} para um entreferro reduzido}
     	\includegraphics[scale=.9]{pdf/cond/Conversor 3SSC com entreferro reduzido (freq. de 20kHz).pdf}
     	\label{fig:med_cond_3ssc20k}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
@@ -471,7 +471,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão conduzida entre um conversor 3SSC com uma frequência de chaveamento de \SI{20}{\kilo\hertz} para um entreferro grande e um entreferro reduzido}
+    	\caption{Comparação dos resultados do ensaio de emissão conduzida entre um conversor 3SSC com uma frequência de chaveamento de \qty{20}{\kilo\hertz} para um entreferro grande e um entreferro reduzido}
     	\includegraphics[scale=.9]{pdf/cond/cond-Conversor 3SSC (freq. de 20kHz)-Conversor 3SSC com entreferro reduzido (freq. de 20kHz).pdf}
     	\label{fig:med_cond_3ssc_comp}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
@@ -481,7 +481,7 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão irradiada para um CBI e um conversor 3SSC com uma frequência de chaveamento de \SI{20}{\kilo\hertz} para um entreferro reduzido}
+    	\caption{Comparação dos resultados do ensaio de emissão irradiada para um CBI e um conversor 3SSC com uma frequência de chaveamento de \qty{20}{\kilo\hertz} para um entreferro reduzido}
     	\includegraphics[scale=.9]{pdf/rad/Conversor 3SSC com entreferro reduzido (freq. de 20kHz).pdf}
     	\label{fig:med_rad_3ssc20k}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
@@ -491,20 +491,20 @@ Neste capítulo será abordado o projeto do conversor Buck \interleaved de dois 
     
     \begin{figure}[H]
     	\centering
-    	\caption{Comparação dos resultados do ensaio de emissão irradiada entre um conversor 3SSC com uma frequência de chaveamento de \SI{20}{\kilo\hertz} para um entreferro grande e um entreferro reduzido}
+    	\caption{Comparação dos resultados do ensaio de emissão irradiada entre um conversor 3SSC com uma frequência de chaveamento de \qty{20}{\kilo\hertz} para um entreferro grande e um entreferro reduzido}
     	\includegraphics[scale=.9]{pdf/rad/rad-Conversor 3SSC (freq. de 20kHz)-Conversor 3SSC com entreferro reduzido (freq. de 20kHz).pdf}
     	\label{fig:med_rad_3ssc_comp}
      	\indentedfont[15.5cm]{Elaboração própria (2021)}
     \end{figure}
     
-    Na figura, nota-se uma redução nos níveis emitidos entre as frequências de \SI{80}{\mega\hertz} e \SI{200}{\mega\hertz} devido a mudança no entreferro do indutor. Assim, apesar da redução nos níveis de emissão conduzida para essa estrutura, há um aumento na emissão irradiada. Ainda, percebe-se a necessidade de um grande cuidado ao projetar os indutores, uma vez que seu entreferro é um dos grandes responsáveis pela emissão irradiada. 
+    Na figura, nota-se uma redução nos níveis emitidos entre as frequências de \qty{80}{\mega\hertz} e \qty{200}{\mega\hertz} devido a mudança no entreferro do indutor. Assim, apesar da redução nos níveis de emissão conduzida para essa estrutura, há um aumento na emissão irradiada. Ainda, percebe-se a necessidade de um grande cuidado ao projetar os indutores, uma vez que seu entreferro é um dos grandes responsáveis pela emissão irradiada. 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \subsection{Uso combinado das técnicas com melhores resultados} \label{cap:result_tecnicas_total}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     O uso do conversor 3SSC, apesar de apresentar maiores níveis de emissão irradiada, consiste em uma boa alternativa para a redução da emissão conduzida, podendo até substituir o uso de filtros como técnica. Aliado ao conversor 3SSC, algumas técnicas e soluções de mitigação de emissão irradiada podem ser aplicadas, buscando um equilíbrio entre as emissões. 
     
-    Assim, buscando demonstrar a viabilidade das técnicas estudadas, aplicou-se uma combinação das técnicas com melhor resultado junto ao conversor 3SSC. Dessa forma, foi utilizado a técnica de uso de um núcleo de ferrite nos terminais de dreno dos transistores e a conexão dos dissipadores á referência do circuito com um capacitor de \SI{100}{\nano\farad}. A \autoref{fig:med_cond_todas_tec} apresenta o comparativo entre os resultados do ensaio de emissão conduzida do circuito inicial (CBI) e o uso das técnicas com melhores resultados (uso de um núcleo de ferrite no terminal de dreno + conexão dos dissipadores à referência + conversor 3SSC com frequência de operação de \SI{20}{\kilo\hertz}).
+    Assim, buscando demonstrar a viabilidade das técnicas estudadas, aplicou-se uma combinação das técnicas com melhor resultado junto ao conversor 3SSC. Dessa forma, foi utilizado a técnica de uso de um núcleo de ferrite nos terminais de dreno dos transistores e a conexão dos dissipadores á referência do circuito com um capacitor de \qty{100}{\nano\farad}. A \autoref{fig:med_cond_todas_tec} apresenta o comparativo entre os resultados do ensaio de emissão conduzida do circuito inicial (CBI) e o uso das técnicas com melhores resultados (uso de um núcleo de ferrite no terminal de dreno + conexão dos dissipadores à referência + conversor 3SSC com frequência de operação de \qty{20}{\kilo\hertz}).
     
     \begin{figure}[H]
     	\centering

@@ -276,7 +276,7 @@
             \end{conditions}
             
             Ainda, deve-se considerar a fase de entrada em condução do diodo, \autoref{fig:perdas_diodo_c1}, que, diferente do diodo ideal, leva um certo período de tempo $\subx{t}{rf}$ para entrar em condução \cite{ref:ELP_livro_EletrPotBarbi}. 
-            %Segundo \citeonline{ref:ELP_livro_EletrPotBarbi}, esse tempo pode variar de \SI{0,1}{\micro\second} a \SI{1,5}{\micro\second}.
+            %Segundo \citeonline{ref:ELP_livro_EletrPotBarbi}, esse tempo pode variar de \qty{0,1}{\micro\second} a \qty{1,5}{\micro\second}.
             
             \begin{figure}[H]
             	\centering
@@ -322,7 +322,7 @@
             
             \abreviatura'{MOSFET}{Metal Oxide Semiconductor Field Effect Transistor}{transistor de efeito de campo metal-óxido}
             
-            Em conversores estáticos, com transistores operando como chave em alta frequência, para potências menores que \SI{1}{\kilo\watt}, comumente é utilizado transistores do tipo MOSFET (\textit{Metal Oxide Semiconductor Field Effect Transistor}, ou transistor de efeito de campo metal-óxido), uma vez que, como observado na \autoref{fig:aplicacao_transistor}, esses transistores operam em frequências mais elevadas \cite{ref:ELP_livro_ProjFontChav}. 
+            Em conversores estáticos, com transistores operando como chave em alta frequência, para potências menores que \qty{1}{\kilo\watt}, comumente é utilizado transistores do tipo MOSFET (\textit{Metal Oxide Semiconductor Field Effect Transistor}, ou transistor de efeito de campo metal-óxido), uma vez que, como observado na \autoref{fig:aplicacao_transistor}, esses transistores operam em frequências mais elevadas \cite{ref:ELP_livro_ProjFontChav}. 
             % Por esse motivo, esse trabalho apenas abordará transistores MOSFET.
             
             Em um transistor MOSFET as perdas por condução, quando a chave está fechada, podem ser obtidas através da \autoref{eq:perda_cond_fet}. Essa equação utiliza para o cálculo a resistência intrínseca entre dreno e \textit{source} do transistor, comumente fornecida pelos fabricantes \cite{ref:ELP_livro_ProjFontChav}.
@@ -365,7 +365,7 @@
                 \subx{V}{DS(off)}   & Tensão entre dreno e \textit{Source} do transistor (V)
             \end{conditions}
             
-            \citeonline{ref:ELP_livro_ProjFontChav} afirma que para frequências muito baixas, como por exemplo \SI{60}{\hertz}, as perdas de comutação no diodo e no transistor podem ser ignoradas. Porém, na frequência de operação de conversores estáticos \mbox{CC-CC}, essas perdas tornam-se consideráveis, devido ao valor das perdas ser proporcional a frequência. Sendo assim, na escolha dos componentes, quanto menores forem os tempos de comutação dos semicondutores, menores serão as perdas. 
+            \citeonline{ref:ELP_livro_ProjFontChav} afirma que para frequências muito baixas, como por exemplo \qty{60}{\hertz}, as perdas de comutação no diodo e no transistor podem ser ignoradas. Porém, na frequência de operação de conversores estáticos \mbox{CC-CC}, essas perdas tornam-se consideráveis, devido ao valor das perdas ser proporcional a frequência. Sendo assim, na escolha dos componentes, quanto menores forem os tempos de comutação dos semicondutores, menores serão as perdas. 
             
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \subsection{Conversores \interleaved} \label{cap:fund_elp_inter}
@@ -381,7 +381,7 @@
             
             Para \citeonline{ref:BI_artigo_CarrBateria}, essa técnica, por dividir a corrente de saída do conversor em seus N ramos, reduz a amplitude da ondulação de corrente de saída e aumenta a sua frequência sem aumentar as perdas de comutação. Dessa forma, os conversores \interleaved apresentam requisitos de filtragem e armazenamento de energia menores se comparados aos conversores não \interleaved. Ainda, devido a divisão das correntes entre as chaves do conversor, há uma redução em seus esforços e uma melhor distribuição da potência processada. 
             
-            Para um conversor do tipo Buck utilizando a técnica \interleaving com dois ramos, mostrado na \autoref{fig:c_buck_interl}, têm-se operando em paralelo os indutores, diodos e transistores. Nessa configuração o acionamento dos transistores $\subx{S}{1}$ e $\subx{S}{2}$ apresentam mesma frequência, porém defasados em \SI{180}{\degree} \cite{ref:BI_artigo_DesignSimul}.
+            Para um conversor do tipo Buck utilizando a técnica \interleaving com dois ramos, mostrado na \autoref{fig:c_buck_interl}, têm-se operando em paralelo os indutores, diodos e transistores. Nessa configuração o acionamento dos transistores $\subx{S}{1}$ e $\subx{S}{2}$ apresentam mesma frequência, porém defasados em \qty{180}{\degree} \cite{ref:BI_artigo_DesignSimul}.
             
             \begin{figure}[H]
             	\centering
@@ -630,7 +630,7 @@
         
         \begin{conditions}
             \subx{I}{o}         & Corrente do diodo em condução (A) \\
-            \subx{Q}{rr}        & Carga do capacitor intrínseco do diodo (\si{\coulomb}) \\
+            \subx{Q}{rr}        & Carga do capacitor intrínseco do diodo (\unit{\coulomb}) \\
             \subx{t}{rf}        & Tempo de atraso na transição (s) \\
             \subx{t}{rr}        & Tempo de recuperação reversa do diodo (s) \\
             \subx{V}{D}         & Tensão do diodo em condução (V) \\
@@ -715,7 +715,7 @@
              	\indentedfont[12cm]{Adaptado de \citeonline[p.~66]{ref:EMC_livro_Paul}}
             \end{figure}
             
-            Para a emissão conduzida, segundo \citeonline{ref:EMC_phd_schlichting}, o equipamento a ser testado deve estar isolado da rede de alimentação. Para tal, é utilizado entre o equipamento sob teste e a rede de alimentação uma \abreviatura&{LISN}{Line Impedance Stabilization Network}{rede de estabilização de impedância de linha}. A LISN tem como finalidade evitar que ruídos externos provenientes da rede de energia contaminem a medida, apresentar uma impedância constante de \SI{50}{$\Omega$} entre os fios de fase e terra e entre os fios neutro e terra e atuar como transdutor de corrente interferente para tensão interferente. A \autoref{fig:meidcao_lisn} apresenta a configuração típica de teste utilizando a LISN. 
+            Para a emissão conduzida, segundo \citeonline{ref:EMC_phd_schlichting}, o equipamento a ser testado deve estar isolado da rede de alimentação. Para tal, é utilizado entre o equipamento sob teste e a rede de alimentação uma \abreviatura&{LISN}{Line Impedance Stabilization Network}{rede de estabilização de impedância de linha}. A LISN tem como finalidade evitar que ruídos externos provenientes da rede de energia contaminem a medida, apresentar uma impedância constante de \qty{50}{$\Omega$} entre os fios de fase e terra e entre os fios neutro e terra e atuar como transdutor de corrente interferente para tensão interferente. A \autoref{fig:meidcao_lisn} apresenta a configuração típica de teste utilizando a LISN. 
             
             % Schlichting - p. 40
             \begin{figure}[H]
@@ -736,7 +736,7 @@
             Como mencionado, as normas internacionais desenvolvidas pelo CISPR tem sido adotada como um padrão único para as normas internacionais de EMC. Dentre as normas criadas, tem-se a publicação Número 22 (CISPR22), que engloba os equipamentos de tecnologia da informação, incluindo dispositivos digitais \cite{ref:EMC_phd_schlichting}. 
             Por esta razão, devido ao projeto desenvolvido não possuir aplicação definida, e sendo conversores estáticos comumente enquadrados nesta norma, a mesma foi utilizada de forma a facilitar a visualização dos resultados obtidos. 
             
-            O CISPR divide os equipamentos em duas classes: classe A e classe B. Sendo os equipamentos classe A de uso industrial e os de classe B de uso residencial. A \autoref{fig:cispr22_irrad} apresenta os limites impostos pela CISPR22 de emissão irradiada para equipamentos classe B. Como pode ser observado, a  faixa de frequência avaliada pela norma para emissões irradiada é de \SI{30}{\mega\hertz} a  \SI{1}{\giga\hertz}.
+            O CISPR divide os equipamentos em duas classes: classe A e classe B. Sendo os equipamentos classe A de uso industrial e os de classe B de uso residencial. A \autoref{fig:cispr22_irrad} apresenta os limites impostos pela CISPR22 de emissão irradiada para equipamentos classe B. Como pode ser observado, a  faixa de frequência avaliada pela norma para emissões irradiada é de \qty{30}{\mega\hertz} a  \qty{1}{\giga\hertz}.
             
             \begin{figure}[H]
             	\centering
@@ -746,7 +746,7 @@
              	\indentedfont[15.5cm]{Adaptado de \citeonline{ref:EMC_CISPR22}}
             \end{figure}
             
-            Para a emissão conduzida, a faixa de frequência avaliada pela CISPR22 é de \SI{150}{\kilo\hertz} a  \SI{30}{\mega\hertz}. A \autoref{fig:cispr22_cond} apresenta os limites impostos pela CISPR22 de emissão conduzida para equipamentos classe B, para medidas quando o receptor de EMC utiliza um detector de Quase-Pico (QP).
+            Para a emissão conduzida, a faixa de frequência avaliada pela CISPR22 é de \qty{150}{\kilo\hertz} a  \qty{30}{\mega\hertz}. A \autoref{fig:cispr22_cond} apresenta os limites impostos pela CISPR22 de emissão conduzida para equipamentos classe B, para medidas quando o receptor de EMC utiliza um detector de Quase-Pico (QP).
             
             \begin{figure}[H]
             	\centering
@@ -897,7 +897,7 @@
     
     \citeonline[p.~3, tradução nossa]{montrose2000printed}
     
-    \SI{120}{dB$\mu$\volt}
+    \qty{120}{dB$\mu$\volt}
     
     \begin{citacao}
         \begin{alineas}[leftmargin=\leftskip+\labelwidth-\labelsep]
