@@ -93,53 +93,22 @@
 %---------------------------------------------------------------------%
 % Agradecimentos
 %---------------------------------------------------------------------%
-\begin{agradecimentos}
-    
-    Ao Instituto Federal de Santa Catarina (IFSC), que me proporcionou muitas oportunidades, amizades e crescimento pessoal e profissional. Que através da sua excelente infraestrutura permitiu que esse trabalho fosse possível.
-    
-    Aos meus familiares e aos muitos amigos que fiz durante a graduação, que me ajudaram e incentivaram durante todo o processo. 
-    
-    Aos professores, que durante essa jornada me instigaram a sempre buscar por mais e que me proporcionaram trabalhos desafiadores, acreditando no meu potencial. Tais projetos exploraram minhas capacidades e me permitiram expandir limites, o que não seria vivenciado sem a confiança dos docentes.
-    
-    
-    %\marcador{add}{Tanta gente...}
-\end{agradecimentos}
+\include{tex/00-Agradecimentos}
 % ---
 
 %---------------------------------------------------------------------%
 % Epígrafe
 %---------------------------------------------------------------------%
-\begin{epigrafe}
-    \vspace*{\fill}
-	\begin{flushright}
-		\textit{``Eu não falhei, encontrei 10 mil\\
-		soluções que não davam certo.'' \\
-		(Thomas A. Edison)}
-	\end{flushright}
-\end{epigrafe}
-
+\include{tex/00-Epigrafe}
 %---------------------------------------------------------------------%
 % RESUMOS
 %---------------------------------------------------------------------%
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-\begin{resumo}
-    Este trabalho apresenta o estudo de técnicas de compatibilidade eletromagnética para a mitigação do ruído conduzido e irradiado em um conversor estático do tipo Buck \Interleaved. O conversor proposto teve seu projeto iniciado na disciplina de Eletrônica de Potencia e apresenta uma  corrente de saída de \SI{5}{\ampere}, tensão de saída de \SI{5}{\volt} e potência nominal de 25 watts. Neste trabalho, foram realizados os ensaios de emissão conduzida e irradiada do conversor projetado, bem como os ensaios após a aplicação das técnicas propostas, aplicadas de forma isoladas. A fim de ser possível a comparação dos resultados dos ensaios, estabeleceu-se uma padronização dos ensaios, tanto em relação ao posicionamento da placa quanto ao do cabo. Dentre os testes propostos, alguns destacaram-se por apresentar resultados significativos. Uma grande solução apresentada foi a redução da frequência de chaveamento com o uso de um conversor com célula de comutação de três estados. As técnicas testadas de forma isolada não apresentaram melhoras significativas simultaneamente na emissão conduzida e irradiada, porém, ao serem utilizadas de forma combinada, mostraram-se de grande eficácia.
-    
-    \textbf{Palavras-chave}: Compatibilidade eletromagnética. Eletrônica de potência. Buck \interleaved. Conversor Buck com célula de comutação de três estados.
-\end{resumo}
+\include{tex/00-Resumo}
 
 % resumo em inglês
-\begin{resumo}[Abstract]
- \begin{otherlanguage*}{english}
-    This papper presents the study of electromagnetic compatibility techniques to reduce conducted and irradiated noise in a Buck Interleaved static converter. The proposed converter project had started in the Power Electronics discipline and has an output current of \SI{5}{\ampere}, an output voltage of \SI{5}{\volt} and a 25 watts of nominal power. In this work, the conducted and radiated emission tests of the designed converter were carried out, as well as the tests after the application of the proposed techniques, applied in isolation. In order to be possible to compare the results of the tests, a standardization of the tests was established, related to the position of the board and the cable. Among the proposed tests, some stood out for presenting significant results. A great solution presented was the reduction of the switching frequency with the use of a three-state switching cell converter. The techniques tested in isolation didn't show significant improvements simultaneously in the conducted and irradiated emission, however, when used in combination, they proved to be of great efficiency.
-
-   \vspace{\onelineskip}
- 
-   \noindent 
-   \textbf{Keywords}: Eletromagnetic compatibility. Power eletronics. Buck Interleaved. Three-state switching cell Buck Converter.
- \end{otherlanguage*}
-\end{resumo}
+\include{tex/00-Abstract}
 
 
 %---------------------------------------------------------------------%
@@ -208,10 +177,7 @@
 % ----------------------------------------------------------
 % Apêndices
 % ----------------------------------------------------------
-\begin{apendicesenv}
-    \partapendices
-    \include{tex/30-Apendices}
-\end{apendicesenv}
+\include{tex/30-Apendices}
 
 % ----------------------------------------------------------
 % Anexos
