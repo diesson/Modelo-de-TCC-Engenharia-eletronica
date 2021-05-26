@@ -3,7 +3,7 @@
 Este projeto é um modelo de monografia de trabalho de conclusão de curso utilizado pelo curso de 
 Engenharia Eletrônica do Instituto Federal de Educação Ciência e Tecnologia de Santa Catarina.
 
-A classe ifscTCC.cls se baseia na [AbnTex](https://github.com/abntex/abntex2) modificada para atender as normas e regulamentos estabelecidos pelo IFSC, em seu manual de Julho de 2019, 4ª Edição
+A classe ifscTCC.cls se baseia na [abnTeX2](https://github.com/abntex/abntex2) modificada para atender as normas e regulamentos estabelecidos pelo IFSC, em seu manual de Julho de 2019, 4ª Edição
 
 Desenvolvimento por:
 
