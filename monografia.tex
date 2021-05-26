@@ -113,6 +113,8 @@
 
 %---------------------------------------------------------------------%
 % inserir lista de ilustrações
+%
+% Nota: Somente deve aparecer em trabalhos com número de ilustrações  (desenhos,  esquemas,  fluxogramas,  fotografias,  gráficos,  mapas, plantas ou quadros) igual ou superior a cinco. Quando esse número for inferior a cinco, a lista de ilustrações é opcional. 
 %---------------------------------------------------------------------%
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
@@ -120,6 +122,8 @@
 
 %---------------------------------------------------------------------%
 % inserir lista de tabelas
+%
+% Nota:  Somente deve aparecer em trabalhos com cinco ou mais tabelas (quando inferior a cinco é opcional). 
 %---------------------------------------------------------------------%
 %\pdfbookmark[0]{\listtablename}{lot}
 %\listoftables*
@@ -134,9 +138,11 @@
 
 %---------------------------------------------------------------------%
 % inserir lista de abreviaturas e simbolos
+%
+% Nota: Consiste  na  relação  alfabética  das abreviaturas e siglas utilizadas no texto, seguidas das palavras ou expressões correspondentes grafadas por extenso. Somente deve aparecer no trabalho se tiver um número de siglas igual ou superior a cinco (quando inferior a cinco é opcional).
+% Obs: Se não houver nenhuma abreviatura ou símbolos sendo utilizados, haverá um erro ao tentar executar os dois comandos abaixo.
 %---------------------------------------------------------------------%
-%\listofabrev{tex/00-Abreviaturas}
-%\imprimirlistadeabreviaturas
+\imprimirlistadeabreviaturas
 \imprimirlistadesimbolos
 \cleardoublepage
 
@@ -156,12 +162,17 @@
 % Inclusão dos capítulos que estão em outros arquivos .tex
 % ----------------------------------------------------------
 
-\include{tex/00-Unidades}
-\include{tex/01-Introducao}
-\include{tex/02-Fundamentacao}
-\include{tex/03-Metodologia}
-\include{tex/04-Resultados}
-\include{tex/20-Conclusao}
+\include{tex/00-Simbolos-Unidades}
+\include{tex/00-Abreviaturas-Siglas}
+
+\include{tex/10-Introducao}
+\include{tex/20-Desenvolvimento}
+\include{tex/21-Fundamentacao}
+\include{tex/22-Metodologia}
+\include{tex/23-Metodos-Aplicados}
+\include{tex/24-Resultados}
+\include{tex/25-Analise-Discussao}
+\include{tex/50-Conclusao}
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -177,15 +188,15 @@
 % ----------------------------------------------------------
 % Apêndices
 % ----------------------------------------------------------
-\include{tex/30-Apendices}
+\include{tex/80-Apendices}
 
 % ----------------------------------------------------------
 % Anexos
 % ----------------------------------------------------------
-%\begin{anexosenv}
-%    \partanexos
-%    \include{tex/40-Anexos}
-%\end{anexosenv}
+\begin{anexosenv}
+    \partanexos
+    \include{tex/90-Anexos}
+\end{anexosenv}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
