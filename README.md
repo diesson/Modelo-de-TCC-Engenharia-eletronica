@@ -1,32 +1,34 @@
 # Modelo de TCC LaTeX - IFSC
 
-Este projeto é um modelo de monografia de trabalho de conclusão de curso utilizado pelo curso de 
-Engenharia Eletrônica do Instituto Federal de Educação Ciência e Tecnologia de Santa Catarina.
+Este projeto é um modelo de monografia de trabalho de conclusão de curso 
+utilizado pelo curso de Engenharia Eletrônica do Instituto Federal de Educação 
+Ciência e Tecnologia de Santa Catarina.
 
-A classe ifscTCC.cls se baseia na [abnTeX2](https://github.com/abntex/abntex2) modificada para atender as normas e regulamentos estabelecidos pelo IFSC, em seu manual de Julho de 2019, 4ª Edição
+A classe ifscTCC.cls se baseia na [abnTeX2](https://github.com/abntex/abntex2) 
+modificada para atender as normas e regulamentos estabelecidos pelo IFSC, 
+em seu manual de Julho de 2019, 4ª Edição
 
-Desenvolvimento por:
+Este modelo é um fork do [repositório do diesson](https://github.com/diesson/Modelo-de-TCC-Engenharia-eletronica), 
+que por sua vez é um fork com melhorias e simplificações a partir do 
+[repositório do bydansouza](https://github.com/bydansouza/ifscTCC). As últimas mudanças foram:
+ * Os pacotes matemáticos foram alterados a fim de obter uma qualidade melhor
+   nas renderizações de equações matriciais ou que contem uderbrace / overbrace.
+ * Esta versão foi atualizada para trabalhar com Siunitx v3
+ * Todo o conteúdo textual original foi removido, no lugar, foi adicionado um
+ conteúdo guia, retirado do [Manual de Comunicação Científica (edição 2016)](https://www.ifsc.edu.br/documents/30725/188971/IFSC_manual_comunicacao_cientifica_maio_2016.pdf/58c017ce-c9e1-e36f-03b7-ea26b58f7d97). 
+   Para um trabalho completo como referência, ver o [repositório do Diesson](https://github.com/diesson/Modelo-de-TCC-Engenharia-eletronica)
+ * Foi adicionado um .gitignore para evitar arquivos desnecessários no repositório
 
-* Daniel Henrique Camargo de Souza (bydansouza)
+# Como usar?
+Este repositório está disponível como um template no github. Para criar um 
+repositório a partir de um template, ler [aqui](https://docs.github.com/pt/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template)).
 
-Adaptado por:
+# Como contribuir?
+Crie um Fork, mande um PR.
 
-* Diesson Stefano Allebrandt (diesson)
-
-* Felipe Rodrigues Broering (BroeringFelipe)
-
-
-## Trabalho publicado:
-### Estudo da redução da interferência eletromagnética de um conversor estático do tipo Buck interleaved.
-
-Este trabalho apresenta o estudo de técnicas de compatibilidade eletromagnética para a mitigação do ruído conduzido e 
-irradiado em um conversor estático do tipo Buck Interleaved. O conversor proposto teve seu projeto iniciado na disciplina de 
-Eletrônica de Potencia e apresenta uma  corrente de saída de 5 A, tensão de saída de 5 V e potência nominal de 25 watts. 
-Neste trabalho, foram realizados os ensaios de emissão conduzida e irradiada do conversor projetado, bem como os ensaios após a 
-aplicação das técnicas propostas, aplicadas de forma isoladas. A fim de ser possível a comparação dos resultados dos ensaios, 
-estabeleceu-se uma padronização dos ensaios, tanto em relação ao posicionamento da placa quanto ao do cabo. Dentre os testes 
-propostos, alguns destacaram-se por apresentar resultados significativos. Uma grande solução apresentada foi a redução da 
-frequência de chaveamento com o uso de um conversor com célula de comutação de três estados. As técnicas testadas de forma 
-isolada não apresentaram melhoras significativas simultaneamente na emissão conduzida e irradiada, porém, ao serem utilizadas 
-de forma combinada, mostraram-se de grande eficácia.
+# Contribuidores
+ * [Daniel Henrique Camargo de Souza (bydansouza, o desenvolvedor original)](https://github.com/bydansouza)
+ * [Diesson Stefano Allebrandt (diesson)](https://github.com/diesson)
+ * [Felipe Rodrigues Broering (BroeringFelipe)](https://github.com/BroeringFelipe)
+ * [João Antônio Cardoso](https://github.com/joaoanoniocardoso)
 
