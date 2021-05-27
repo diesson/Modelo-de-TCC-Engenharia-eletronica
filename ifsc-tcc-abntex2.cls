@@ -1,6 +1,36 @@
-% !TEX root = monografia.tex
+%%
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade XXXX
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.s
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is github.com/joaoantoniocardoso
+%%
+%% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
+%%
 
-\ProvidesPackage{conf-ifsc}
+%\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{ifsc-tcc-abntex2}[2021/05/27 v1.0 Modelo de TCC do IFSC baseado em abnTeX2]
+
+%
+% Repassa todos os parametros a classe abntex2, 
+\DeclareOption*{%
+	\PassOptionsToClass{\CurrentOption}{abntex2}%
+}
+\ProcessOptions\relax
+\LoadClass{abntex2}
+
+% ----------------------------------------------------------
+% Referências de customização da classe AbnTeX2: 
+% https://github.com/abntex/abntex2/wiki/ComoCustomizar
+% ----------------------------------------------------------
 
 \usepackage{conf-pacotes}
 \usepackage{conf-comandos}
@@ -30,7 +60,7 @@
     bottom=2.0cm,
     head=0.7cm,
     foot=0.7cm
-    ]{geometry}
+]{geometry}
 
 % ----------------------------------------------------------
 % ..........................................................
@@ -202,17 +232,17 @@
 
 \makeatletter
 \hypersetup{                        % informações do PDF
-     	%pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
-    	pdfsubject={\imprimirpreambulo},
-		pdfkeywords={Palavra chave 1}{Palavra chave 2}{Palavra chave 3}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
-    	linkcolor=black,          	% color of internal links
-    	citecolor=black,        		% color of links to bibliography
-    	filecolor=black,      		% color of file links
-		urlcolor=black,
-		bookmarksdepth=4
+   	%pagebackref=true,
+	pdftitle={\@title}, 
+	pdfauthor={\@author},
+   	pdfsubject={\imprimirpreambulo},
+	pdfkeywords={Palavra chave 1}{Palavra chave 2}{Palavra chave 3}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+   	linkcolor=black,          	% color of internal links
+   	citecolor=black,        	% color of links to bibliography
+   	filecolor=black,      		% color of file links
+	urlcolor=black,
+	bookmarksdepth=4
 }
 \makeatother
 
@@ -303,38 +333,38 @@
 % Permitindo caracteres acentuados dentro do ambiente lstlisting
 % ----------------------------------------------------------
 \lstset{%
-        inputencoding=utf8,
-        extendedchars=true,
-        literate=%
-        {é}{{\'{e}}}1
-        {è}{{\`{e}}}1
-        {ê}{{\^{e}}}1
-        {ë}{{\¨{e}}}1
-        {É}{{\'{E}}}1
-        {Ê}{{\^{E}}}1
-        {û}{{\^{u}}}1
-        {ù}{{\`{u}}}1
-        {â}{{\^{a}}}1
-        {à}{{\`{a}}}1
-        {á}{{\'{a}}}1
-        {ã}{{\~{a}}}1
-        {Á}{{\'{A}}}1
-        {Â}{{\^{A}}}1
-        {Ã}{{\~{A}}}1
-        {ç}{{\c{c}}}1
-        {Ç}{{\c{C}}}1
-        {õ}{{\~{o}}}1
-        {ó}{{\'{o}}}1
-        {ú}{{\'{u}}}1
-        {Ú}{{\'{U}}}1
-        {ô}{{\^{o}}}1
-        {Õ}{{\~{O}}}1
-        {Ó}{{\'{O}}}1
-        {Ô}{{\^{O}}}1
-        {î}{{\^{i}}}1
-        {Î}{{\^{I}}}1
-        {í}{{\'{i}}}1
-        {Í}{{\~{Í}}}1
+	inputencoding=utf8,
+	extendedchars=true,
+	literate=%
+	{é}{{\'{e}}}1
+	{è}{{\`{e}}}1
+	{ê}{{\^{e}}}1
+	{ë}{{\¨{e}}}1
+	{É}{{\'{E}}}1
+	{Ê}{{\^{E}}}1
+	{û}{{\^{u}}}1
+	{ù}{{\`{u}}}1
+	{â}{{\^{a}}}1
+	{à}{{\`{a}}}1
+	{á}{{\'{a}}}1
+	{ã}{{\~{a}}}1
+	{Á}{{\'{A}}}1
+	{Â}{{\^{A}}}1
+	{Ã}{{\~{A}}}1
+	{ç}{{\c{c}}}1
+	{Ç}{{\c{C}}}1
+	{õ}{{\~{o}}}1
+	{ó}{{\'{o}}}1
+	{ú}{{\'{u}}}1
+	{Ú}{{\'{U}}}1
+	{ô}{{\^{o}}}1
+	{Õ}{{\~{O}}}1
+	{Ó}{{\'{O}}}1
+	{Ô}{{\^{O}}}1
+	{î}{{\^{i}}}1
+	{Î}{{\^{I}}}1
+	{í}{{\'{i}}}1
+	{Í}{{\~{Í}}}1
 }
 
 % ----------------------------------------------------------

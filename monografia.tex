@@ -1,25 +1,15 @@
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}
-\ProcessOptions
-
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
 	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)\
-	oneside,			% para impressão em verso e anverso. Oposto a oneside
+	oneside,			% para impressão em verso e anverso
 	a4paper,			% tamanho do papel. 
 	% -- opções da classe abntex2 --
 	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
-	french,				% idioma adicional para hifenização
-	spanish,			% idioma adicional para hifenização
 	brazil				% o último idioma é o principal do documento
-	]{abntex2}
-
-\usepackage{conf-ifsc}
+]{ifsc-tcc-abntex2}
 
 %---------------------------------------------------------------------%
 %---------------------------------------------------------------------%
@@ -28,17 +18,11 @@
 %---------------------------------------------------------------------%
 
 \titulo{Título da Monografia}
-
 \autor{Nome do Autor}
-
 \local{Florianópolis}
-
 \data{2021}
-
 \orientador[Orientador:\\]{}
-
 \coorientador[Coorientador:\\]{}
-
 \tipotrabalho{Monografia (Graduação)}
 
 % O preambulo deve conter o tipo do trabalho, o objetivo, o nome da instituição e a área de concentração 
@@ -54,13 +38,13 @@
 \begin{document}
 
 \selectlanguage{brazil}
-\frenchspacing 
+\frenchspacing
 
 
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
-% \pretextual
+\pretextual
 
 \imprimircapa
 \imprimirfolhaderosto* %(o * indica que haverá a ficha bibliográfica)
@@ -74,20 +58,20 @@
 % Precisa ser feito pelo navegador Mozilla Firefox
 %---------------------------------------------------------------------%
 
-%\imprimirficha{pdf/fichacatalografica3.pdf}
+%\imprimirficha{pdf/fichacatalografica.pdf}
 \cleardoublepage
 
 %---------------------------------------------------------------------%
 % Inserir folha de aprovação
 %---------------------------------------------------------------------%
 
-%\imprimiraprovacao
+\imprimiraprovacao
 \cleardoublepage
 
 %---------------------------------------------------------------------%
 % Dedicatória
 %---------------------------------------------------------------------%
-%\imprimirdedicatoria{Este trabalho é dedicado às crianças adultas que,\\quando pequenas, sonharam em se tornar cientistas.}
+\imprimirdedicatoria{Este trabalho é dedicado às crianças adultas que,\\quando pequenas, sonharam em se tornar cientistas.}
 % ---
 
 %---------------------------------------------------------------------%
@@ -100,16 +84,13 @@
 % Epígrafe
 %---------------------------------------------------------------------%
 \include{tex/00-Epigrafe}
+
 %---------------------------------------------------------------------%
 % RESUMOS
 %---------------------------------------------------------------------%
-% resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \include{tex/00-Resumo}
-
-% resumo em inglês
 \include{tex/00-Abstract}
-
 
 %---------------------------------------------------------------------%
 % inserir lista de ilustrações
@@ -125,16 +106,16 @@
 %
 % Nota:  Somente deve aparecer em trabalhos com cinco ou mais tabelas (quando inferior a cinco é opcional). 
 %---------------------------------------------------------------------%
-%\pdfbookmark[0]{\listtablename}{lot}
-%\listoftables*
-%\cleardoublepage
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
 
 %---------------------------------------------------------------------%
-% inserir lista de listings
+% inserir lista de códigos fonte (listings)
 %---------------------------------------------------------------------%
-%\pdfbookmark[0]{\lstlistlistingname}{lol}
-%\listoflistings
-%\cleardoublepage
+\pdfbookmark[0]{\lstlistlistingname}{lol}
+\listoflistings
+\cleardoublepage
 
 %---------------------------------------------------------------------%
 % inserir lista de abreviaturas e simbolos
@@ -145,6 +126,7 @@
 \imprimirlistadeabreviaturas
 \imprimirlistadesimbolos
 \cleardoublepage
+%\usepackage{Simbolos}
 
 %---------------------------------------------------------------------%
 % inserir o sumario
@@ -158,13 +140,13 @@
 % ----------------------------------------------------------
 \textual
 
-% ----------------------------------------------------------
-% Inclusão dos capítulos que estão em outros arquivos .tex
-% ----------------------------------------------------------
-
+% Cria a lista de Símbolos/Unidades, Abreviaturas/Siglas, visível somente com \imprimirlistadeabreviaturas e \imprimirlistadesimbolos
 \include{tex/00-Simbolos-Unidades}
 \include{tex/00-Abreviaturas-Siglas}
 
+% ----------------------------------------------------------
+% Inclusão dos capítulos que estão em outros arquivos .tex
+% ----------------------------------------------------------
 \include{tex/10-Introducao}
 \include{tex/20-Desenvolvimento}
 \include{tex/21-Fundamentacao}
@@ -178,7 +160,6 @@
 % ELEMENTOS PÓS-TEXTUAIS
 % ----------------------------------------------------------
 \postextual
-% ----------------------------------------------------------
 
 % ----------------------------------------------------------
 % Referências bibliográficas
@@ -193,16 +174,13 @@
 % ----------------------------------------------------------
 % Anexos
 % ----------------------------------------------------------
-\begin{anexosenv}
-    \partanexos
-    \include{tex/90-Anexos}
-\end{anexosenv}
+\include{tex/90-Anexos}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
 %---------------------------------------------------------------------
-%\phantompart
-%\printindex
-%---------------------------------------------------------------------
+\phantompart
+\printindex
+
 
 \end{document}

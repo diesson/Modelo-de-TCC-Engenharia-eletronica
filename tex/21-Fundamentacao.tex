@@ -16,60 +16,60 @@
 		\indentedfont[15.2cm]{Elaboração própria (2021)}
 	\end{figure}
 
-	Um exemplo de equação matricial:
+	Alguns exemplos de equações:
 	
 	\[
-	g^{(e)}(x) = \overbrace{\bigl( 1 + \tfrac{x^2}{2!} + \tfrac{x^4}{4!} + \dots \bigr)}^{\text{red}}
-	\overbrace{\bigl( 1 + \tfrac{x}{1} + \tfrac{x^2}{2!} + \dots \bigr)}^{\text{green}}
-	\overbrace{\bigl( 1 + \tfrac{x}{1} + \tfrac{x^2}{2!} + \dots \bigr)}^{\text{white}}
+		\binom{m+n}{m} = 
+		\frac{(m+n)!}{m!n!} = 
+		\frac{
+			\overbrace{
+				(m+n)(m+n-1)\cdots(n+1)
+			}^{\clap{$m$ factors}}
+		}{
+			\underbrace{
+				m(m-1)\cdots 1
+			}_{\clap{$m$ factors}}}
 	\]
 	
-	$$
-	\left(
-	\begin{array}{c}
-		m+n\\
-		m
-	\end{array}
-	\right)
-	= \frac{(m+n)!}{m!n!}
-	= \frac{\overbrace{(m+n)(m+n-1)\cdots(n+1)}^{\mbox{$m$ factors}}}{\underbrace{m(m-1)\cdots 1}_{\mbox{$m$ factors}}}
-	$$
-
-	\begin{eqnarray}
-		\nonumber
-		\dot{x} = 
-		\begin{bmatrix}
-			\dot{x_1} \\
-			\dot{x_2} \\
-			\dot{x_3} \\
-		\end{bmatrix} = 
-		\begin{bmatrix}
-			\dot{v_{C_1}} \\
-			\dot{v_{C_2}} \\
-			\dot{v_{C_3}} \\
-		\end{bmatrix} =
-		\overbrace{
-			\begin{bmatrix}
-				0 & 559.44 & 0 \\
-				-21.01 & -100.93 & 21.01 \\
-				0 & 0 & -666.67
-		\end{bmatrix}}^{A} x
-		+
-		\overbrace{
-			\begin{bmatrix}
-				0 \\
-				0 \\
-				666.67
-		\end{bmatrix}}^{B} u \\
-		\label{eq-ssplanta_final}
-		y = 
-		\overbrace{
-			\begin{bmatrix}
-				1 & 0 & 0 \\
-		\end{bmatrix}}^{C} x
-		+
-		\overbrace{
-			\begin{bmatrix}
-				0
-		\end{bmatrix}}^{D} u
-	\end{eqnarray}
+	\begin{equation}
+		\hat{x} = \hat{y} + a
+	\end{equation}
+	
+	\begin{subequations}\label{eq-group1}
+		\begin{align}
+			\label{eq-lalala}
+			\dot{x}
+			&=	\begin{bmatrix}
+				\dot{x_1} \\
+				\dot{x_2} \\
+				\dot{x_3} \\
+			\end{bmatrix} 
+			=	\begin{bmatrix}
+				\dot{v_{C_1}} \\
+				\dot{v_{C_2}} \\
+				\dot{v_{C_3}} \\
+			\end{bmatrix}
+			=	\overbrace{
+				\begin{bmatrix}
+					0 & 559.44 & 0 \\
+					-21.01 & -100.93 & 21.01 \\
+					0 & 0 & -666.67
+			\end{bmatrix}}^{A} x
+			+	\overbrace{
+				\begin{bmatrix}
+					0 \\
+					0 \\
+					666.67
+			\end{bmatrix}}^{B} u \\
+			\label{eq-ssplanta_final}
+			y
+			&=	\overbrace{
+				\begin{bmatrix}
+					1 & 0 & 0 \\
+			\end{bmatrix}}^{C} x
+			+	\overbrace{
+				\begin{bmatrix}
+					0
+			\end{bmatrix}}^{D} u
+		\end{align}
+	\end{subequations}
