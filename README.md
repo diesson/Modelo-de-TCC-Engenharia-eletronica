@@ -8,7 +8,7 @@ de Julho de 2019, 4ª Edição, e usa a classe [abnTeX2](https://github.com/abnt
 
 # Como usar?
 Este repositório está disponível como um template no github. Para criar um 
-repositório a partir de um template, ler [aqui](https://docs.github.com/pt/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template)).
+repositório a partir de um template, ler [aqui](https://docs.github.com/pt/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template).
 TL;DR Você pode tanto usar como um submodulo do seu repositório GIT quanto criar um
 repostório a partir desse template.
 
