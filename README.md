@@ -4,7 +4,7 @@ Este repositório é um modelo (template) de monografia / trabalho de conclusão
 de curso para o Instituto Federal de Educação Ciência e Tecnologia de Santa Catarina.
 
 Feito para atender as normas e regulamentos estabelecidos pelo IFSC, em seu manual 
-de Julho de 2019, 4ª Edição, e usa a classe [abnTeX2](https://github.com/abntex/abntex2).
+de Julho de 2019, 4ª Edição, usando a classe [abnTeX2](https://github.com/abntex/abntex2).
 
 # Como usar?  
 Este repositório está disponível como um template no github. Para criar um 
