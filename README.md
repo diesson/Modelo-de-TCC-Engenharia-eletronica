@@ -1,25 +1,26 @@
-# Modelo de TCC LaTeX - IFSC
+# IFSC-TCC-abnTeX2 - Modelo de TCC em LaTeX
 
 Este repositório é um modelo (template) de monografia / trabalho de conclusão
-de curso utilizado inicialmente pelo curso de Engenharia Eletrônica do Instituto
-Federal de Educação Ciência e Tecnologia de Santa Catarina, mas pode ser
-utilizado por qualquer curso.
+de curso para o Instituto Federal de Educação Ciência e Tecnologia de Santa Catarina.
 
-Essas configurações para atender as normas e regulamentos estabelecidos pelo
-IFSC, em seu manual de Julho de 2019, 4ª Edição, e usa a classe
-[abnTeX2](https://github.com/abntex/abntex2).
+Feito para atender as normas e regulamentos estabelecidos pelo IFSC, em seu manual 
+de Julho de 2019, 4ª Edição, e usa a classe [abnTeX2](https://github.com/abntex/abntex2).
 
 # Como usar?
 Este repositório está disponível como um template no github. Para criar um 
 repositório a partir de um template, ler [aqui](https://docs.github.com/pt/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template)).
+TL;DR Você pode tanto usar como um submodulo do seu repositório GIT quanto criar um
+repostório a partir desse template.
 
 # Como contribuir?
 Crie um Fork, mande um PR.
 
-# Mudanças
+# Histórico e Mudanças
 Este repositório é um fork do [repositório do diesson](https://github.com/diesson/Modelo-de-TCC-Engenharia-eletronica), 
 que por sua vez é um fork com melhorias e simplificações a partir do 
-[repositório do bydansouza](https://github.com/bydansouza/ifscTCC). As últimas mudanças foram:
+[repositório do bydansouza](https://github.com/bydansouza/ifscTCC). 
+
+As últimas mudanças foram:
  * Os pacotes matemáticos foram alterados a fim de obter uma qualidade melhor
    nas renderizações de equações matriciais ou que contem uderbrace / overbrace.
  * Esta versão foi atualizada para trabalhar com Siunitx v3
