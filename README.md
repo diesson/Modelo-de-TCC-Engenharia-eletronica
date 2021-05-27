@@ -1,4 +1,4 @@
-# IFSC-TCC-abnTeX2 - Modelo de TCC do IFSC em LaTeX
+# IFSC-TCC-abnTeX2 - Modelo LaTeX do TCC do IFSC
 
 Este repositório é um modelo (template) de monografia / trabalho de conclusão
 de curso para o Instituto Federal de Educação Ciência e Tecnologia de Santa Catarina.
